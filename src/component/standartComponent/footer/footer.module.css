@@ -1,0 +1,107 @@
+:root {
+  --standart-color: #ffdb00;
+  --secondary-color: #118bd7;
+  --red-color: #3e3092;
+  --colred-color: #f4223c;
+
+  --custom-font: Ubuntu;
+}
+.footerAllWrap {
+  width: calc(100% - 100px);
+  padding: 50px;
+  height: auto;
+  border-top: 3px solid var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapFooterSmall {
+  width: 80%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logoSt {
+  height: 100px;
+  width: auto;
+  cursor: pointer;
+}
+.wrapLogo {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.number {
+  text-decoration: none;
+  font-size: 50px;
+  font-family: var(--custom-font);
+  color: var(--red-color);
+}
+.wrapNavigation {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.wrapSocialIcon {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+}
+.social {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-color);
+  cursor: pointer;
+}
+.aiOutlineInstagram {
+  color: white;
+  font-size: 35px;
+}
+.footerNavWrap {
+  width: auto;
+  height: auto;
+}
+.footerUl {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  width: 700px;
+  margin-top: 50px;
+}
+.footerLi {
+  font-family: var(--custom-font);
+  text-decoration: none;
+  color: var(--red-color);
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.footerLi:hover {
+  color: var(--secondary-color);
+}
+.priv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.privLink {
+  font-family: var(--custom-font);
+  text-decoration: none;
+  color: var(--red-color);
+  font-size: 20px;
+  margin-top: 10px;
+}

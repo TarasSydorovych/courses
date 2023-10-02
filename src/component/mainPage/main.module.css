@@ -1,0 +1,206 @@
+:root {
+  --standart-color: #ffdb00;
+  --secondary-color: #118bd7;
+  --red-color: #3e3092;
+  --colred-color: #f4223c;
+
+  --custom-font: Ubuntu;
+}
+.sliderWrap {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.wrapPic {
+  height: 700px;
+  width: 100%;
+}
+.picInSlide {
+  width: 100%;
+  height: 700px;
+}
+.smallAboutWrap {
+  width: calc(100% - 100px);
+  padding: 50px;
+  height: auto;
+  background: #7fc11e;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.smallAbFirstWrap {
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.aboutH1 {
+  font-family: var(--custom-font);
+  font-size: 40px;
+  color: white;
+  margin-bottom: 0;
+}
+.aboutP {
+  font-family: var(--custom-font);
+  font-size: 25px;
+  color: white;
+  width: 90%;
+}
+.buttonLinkAbout {
+  width: 161px;
+  height: 60px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--custom-font);
+  font-size: 20px;
+  background: #f4223c;
+  text-decoration: none;
+  font-weight: bold;
+}
+.picWrapKid {
+  width: 40%;
+  height: auto;
+  position: relative;
+  margin-left: 30px;
+}
+.kid3 {
+  width: 334px;
+  height: 334px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  left: calc(50% - 165px);
+  z-index: 2;
+}
+.kid1 {
+  width: 201px;
+  height: 201px;
+  border-radius: 50%;
+  position: absolute;
+  top: 250px;
+  left: calc(50% - 265px);
+}
+.kid2 {
+  width: 278px;
+  height: 278px;
+  border-radius: 50%;
+  position: absolute;
+  top: 180px;
+  left: calc(50%);
+  z-index: 3;
+}
+.newCourseWrap {
+  padding: 50px;
+  width: calc(100% - 100px);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--colred-color);
+}
+.newCourseH2 {
+  font-family: var(--custom-font);
+  font-size: 40px;
+  color: white;
+}
+.courseWrap {
+  width: 80%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.picCouseNew {
+  width: 300px;
+  height: 187px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.oneCourseWrap {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.h2CousePic {
+  font-family: var(--custom-font);
+  font-size: 35px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.goToCourse {
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--custom-font);
+  font-size: 20px;
+  background: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.whyChoseUs {
+  width: 100%;
+  height: 570px;
+  background: url(../../img/parallax-1.webp) no-repeat #fff;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.whyWrapText {
+  width: 1000px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.whyChouseH4 {
+  font-family: var(--custom-font);
+  font-size: 70px;
+  color: var(--secondary-color);
+  margin-bottom: 0;
+}
+.whyChouseP {
+  font-family: var(--custom-font);
+  font-size: 25px;
+  color: var(--red-color);
+  width: 80%;
+}
+.whtWe {
+  width: 80%;
+  height: auto;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wheChouseLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 60px;
+  background: var(--standart-color);
+  color: white;
+  font-family: var(--custom-font);
+  font-size: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
