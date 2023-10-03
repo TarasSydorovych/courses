@@ -25,12 +25,12 @@ export default function Navigate({ t }) {
           </Link>
         </li>
         <li className={css.navigateLiGre}>
-          <Link className={css.navigateLiLink} to="/">
+          <Link className={css.navigateLiLink} to="/cabinet">
             {t("description.part1.header.cabinet")}
           </Link>
         </li>
         <li className={css.navigateLiRed}>
-          <Link className={css.navigateLiLink} to="/">
+          <Link className={css.navigateLiLink} to="/contact">
             {t("description.part1.header.contact")}
           </Link>
         </li>

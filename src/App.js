@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import keyWord from "./function/keyWord";
 import Main from "./component/mainPage/main";
 import Footer from "./component/standartComponent/footer/footer";
+import Contact from "./component/contact/contact";
+import Cabinet from "./component/cabinet/cabinet";
 
 function App() {
   const [windowDimensions, setWindowDimensions] = useState(false);
@@ -32,6 +34,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cabinet" element={<Cabinet />} />
       </Routes>
       <Footer />
     </>

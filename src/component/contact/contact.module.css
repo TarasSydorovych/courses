@@ -1,0 +1,120 @@
+:root {
+  --standart-color: #ffdb00;
+  --secondary-color: #118bd7;
+  --red-color: #3e3092;
+  --colred-color: #f4223c;
+
+  --custom-font: Ubuntu;
+}
+.contactWrap {
+  padding: 50px;
+  width: calc(100% - 100px);
+  height: auto;
+  background: var(--secondary-color);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.mapWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
+  height: auto;
+  margin-right: 50px;
+}
+.h1Map {
+  font-family: var(--custom-font);
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
+.mapSt {
+  width: 400px;
+  height: 400px;
+}
+.companyInfoWr {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ukAdr {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.newtonH2 {
+  margin-top: 110px;
+  font-family: var(--custom-font);
+  font-size: 30px;
+  color: white;
+}
+.adressWrapP {
+  font-family: var(--custom-font);
+  font-size: 20px;
+  margin: 8px;
+  color: white;
+}
+.formWrap {
+  width: auto;
+  margin-top: 10px;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 50px;
+}
+.contactUs {
+  font-family: var(--custom-font);
+  font-size: 30px;
+  color: white;
+}
+.formicInputs {
+  width: 400px;
+  height: 40px;
+  border: 1px solid white;
+  background: none;
+  margin-top: 30px;
+  padding-left: 20px;
+  color: white;
+  font-family: var(--custom-font);
+  font-size: 20px;
+}
+.formicInputs::placeholder {
+  color: white;
+}
+.formicArea {
+  width: 400px;
+  height: 150px;
+  border: 1px solid white;
+  background: none;
+  margin-top: 30px;
+  padding-left: 20px;
+  padding-top: 20px;
+  color: white;
+  font-family: var(--custom-font);
+  font-size: 20px;
+}
+.formicArea::placeholder {
+  color: white;
+}
+.buttonFormicSend {
+  margin-top: 30px;
+  width: 100%;
+  height: 50px;
+  border: none;
+  background: var(--colred-color);
+  color: white;
+  font-family: var(--custom-font);
+  font-weight: bold;
+  font-size: 20px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+.buttonFormicSend:hover {
+  background: var(--standart-color);
+}

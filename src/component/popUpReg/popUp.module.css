@@ -1,0 +1,79 @@
+:root {
+  --standart-color: #ffdb00;
+  --secondary-color: #118bd7;
+  --red-color: #3e3092;
+  --colred-color: #f4223c;
+
+  --custom-font: Ubuntu;
+}
+.popUpWrapAll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(95, 68, 179, 0.9); /* Затемнення фону */
+  z-index: 1000; /* Зверху всіх інших елементів */
+}
+.formAllWrap {
+  position: relative;
+  width: calc(1000px - 30px);
+  height: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+}
+.aiOutlineClose {
+  font-size: 30px;
+  align-self: flex-end;
+  color: var(--red-color);
+  cursor: pointer;
+}
+.logo {
+  width: 400px;
+  height: auto;
+}
+.formWithInput {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.formicInputs {
+  margin-top: 20px;
+  width: 300px;
+  height: 50px;
+  padding-left: 20px;
+  border-radius: 10px;
+  border: 2px solid var(--secondary-color);
+}
+.formicInputs::placeholder {
+  color: var(--red-color);
+  font-family: var(--custom-font);
+  font-size: 20px;
+}
+.buttonFormicSend {
+  margin-top: 20px;
+  width: 320px;
+  height: 50px;
+  background: var(--standart-color);
+  color: var(--red-color);
+  font-family: var(--custom-font);
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.buttonFormicSend:hover {
+  background: #c2a800;
+}

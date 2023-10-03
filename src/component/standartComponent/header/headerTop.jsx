@@ -6,7 +6,13 @@ import {
 } from "react-icons/ai";
 import en from "../../../img/lanEng.jpg";
 import ukr from "../../../img/lanUkr.jpg";
+import { useState } from "react";
+import PopUpReg from "../../popUpReg/popUpReg";
 export default function HeaderTop({ t }) {
+  const [popUp, setPopUp] = useState(true);
+  const showReg = () => {
+    setPopUp(!popUp);
+  };
   return (
     <section className={css.headerTopWrap}>
       <div className={css.wrapSocial}>
@@ -24,11 +30,12 @@ export default function HeaderTop({ t }) {
       </div>
 
       <div className={css.wrapLogin}>
-        <div className={css.wrapLog}>
+        <div className={css.wrapLog} onClick={showReg}>
           <p className={css.pLofg}> {t("description.part1.header.log")}</p>
           <AiOutlineUser className={css.iOutlineUser} />
         </div>
       </div>
+      {popUp && <PopUpReg setPopUp={setPopUp} />}
     </section>
   );
 }
