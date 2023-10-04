@@ -77,3 +77,24 @@
 .buttonFormicSend:hover {
   background: #c2a800;
 }
+.regH1 {
+  font-family: var(--custom-font);
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 0;
+  color: var(--red-color);
+}
+.regP {
+  font-family: var(--custom-font);
+  color: var(--red-color);
+  font-size: 18px;
+  font-weight: bold;
+}
+.regPSpan {
+  font-family: var(--custom-font);
+  color: var(--red-color);
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}

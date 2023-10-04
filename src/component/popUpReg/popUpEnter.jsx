@@ -3,22 +3,20 @@ import { useTranslation, Trans } from "react-i18next";
 import { AiOutlineClose } from "react-icons/ai";
 import newtonUkr from "../../img/logoUkr.webp";
 import { useEffect, useState } from "react";
-import PopUpEnter from "./popUpEnter";
-export default function PopUpReg({ setPopUp, setEnter }) {
+export default function PopUpEnter({ setPopUp, setEnter }) {
   const { t, i18n } = useTranslation();
-
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [phonecheck, setPhonecheck] = useState(false);
   const [email, setEmail] = useState("");
   const [emailcheck, setEmailcheck] = useState(false);
   const [namecheck, setNamecheck] = useState(false);
-  const openEnter = () => {
-    setPopUp(false);
-    setEnter(true);
-  };
   const closePopUp = () => {
-    setPopUp(false);
+    setEnter(false);
+  };
+  const openReg = () => {
+    setEnter(false);
+    setPopUp(true);
   };
   const [namecheckErr, setNamecheckErr] = useState(
     `${t("description.part1.form.warningSeconPhone")}`
@@ -73,28 +71,14 @@ export default function PopUpReg({ setPopUp, setEnter }) {
       <div className={css.formAllWrap}>
         <AiOutlineClose onClick={closePopUp} className={css.aiOutlineClose} />
         <img src={newtonUkr} className={css.logo} />
-        <h1 className={css.regH1}>{t("description.part1.cabinet.regH")}</h1>
+        <h1 className={css.regH1}>{t("description.part1.cabinet.vhid")}</h1>
         <p className={css.regP}>
-          {t("description.part1.cabinet.ifReg")}&nbsp;
-          <span className={css.regPSpan} onClick={openEnter}>
-            {t("description.part1.cabinet.vhid")}
+          {t("description.part1.cabinet.ifNotReg")}&nbsp;
+          <span className={css.regPSpan} onClick={openReg}>
+            {t("description.part1.cabinet.regH")}
           </span>
         </p>
         <div className={css.formWithInput}>
-          {namecheck && namecheckErr && (
-            <div style={{ color: "red" }}>{namecheckErr}</div>
-          )}
-          <input
-            type="text"
-            className={css.formicInputs}
-            onChange={(e) => nameHandler(e)}
-            onBlur={(e) => blurHandle(e)}
-            name="user_name"
-            id="text"
-            required
-            value={name}
-            placeholder={t("description.part1.contact.name")}
-          />
           {emailcheck && emailcheckErr && (
             <div style={{ color: "red" }}>{emailcheckErr}</div>
           )}
@@ -121,7 +105,7 @@ export default function PopUpReg({ setPopUp, setEnter }) {
             {t("description.part1.cabinet.regGoo")}
           </button>
           <button disabled={isSubmitDisabled} className={css.buttonFormicSend}>
-            {t("description.part1.cabinet.regP")}
+            {t("description.part1.cabinet.en")}
           </button>
         </div>
       </div>

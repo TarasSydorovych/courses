@@ -8,8 +8,10 @@ import en from "../../../img/lanEng.jpg";
 import ukr from "../../../img/lanUkr.jpg";
 import { useState } from "react";
 import PopUpReg from "../../popUpReg/popUpReg";
+import PopUpEnter from "../../popUpReg/popUpEnter";
 export default function HeaderTop({ t }) {
-  const [popUp, setPopUp] = useState(true);
+  const [popUp, setPopUp] = useState(false);
+  const [enter, setEnter] = useState(false);
   const showReg = () => {
     setPopUp(!popUp);
   };
@@ -35,7 +37,8 @@ export default function HeaderTop({ t }) {
           <AiOutlineUser className={css.iOutlineUser} />
         </div>
       </div>
-      {popUp && <PopUpReg setPopUp={setPopUp} />}
+      {popUp && <PopUpReg setPopUp={setPopUp} setEnter={setEnter} />}
+      {enter && <PopUpEnter setPopUp={setPopUp} setEnter={setEnter} />}
     </section>
   );
 }
