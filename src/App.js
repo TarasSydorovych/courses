@@ -12,7 +12,7 @@ import Cabinet from "./component/cabinet/cabinet";
 function App() {
   const [windowDimensions, setWindowDimensions] = useState(false);
   const location = useLocation();
-
+  const [activeUser, setActiveUser] = useState("");
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -31,11 +31,11 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header setActiveUser={setActiveUser} activeUser={activeUser} />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/cabinet" element={<Cabinet />} />
+        <Route path="/cabinet" element={<Cabinet activeUser={activeUser} />} />
       </Routes>
       <Footer />
     </>

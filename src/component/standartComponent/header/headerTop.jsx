@@ -7,13 +7,20 @@ import {
 import en from "../../../img/lanEng.jpg";
 import ukr from "../../../img/lanUkr.jpg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PopUpReg from "../../popUpReg/popUpReg";
 import PopUpEnter from "../../popUpReg/popUpEnter";
-export default function HeaderTop({ t }) {
+export default function HeaderTop({ t, activeUser }) {
+  const navigate = useNavigate();
   const [popUp, setPopUp] = useState(false);
   const [enter, setEnter] = useState(false);
+  console.log(activeUser);
   const showReg = () => {
-    setPopUp(!popUp);
+    if (activeUser) {
+      navigate("/cabinet");
+    } else {
+      setPopUp(!popUp);
+    }
   };
   return (
     <section className={css.headerTopWrap}>
@@ -33,7 +40,11 @@ export default function HeaderTop({ t }) {
 
       <div className={css.wrapLogin}>
         <div className={css.wrapLog} onClick={showReg}>
-          <p className={css.pLofg}> {t("description.part1.header.log")}</p>
+          {!activeUser && (
+            <p className={css.pLofg}> {t("description.part1.header.log")}</p>
+          )}
+          {activeUser && <p className={css.pLofg}>{activeUser.displayName}</p>}
+
           <AiOutlineUser className={css.iOutlineUser} />
         </div>
       </div>

@@ -55,6 +55,15 @@
   border-radius: 50%;
   box-shadow: 0 0 10px 5px rgba(233, 232, 232, 0.5);
 }
+.picUser {
+  border-radius: 50%;
+  box-shadow: 0 0 10px 5px rgba(233, 232, 232, 0.5);
+  width: 100%; /* Ширина блока, де розміщена фотографія */
+  height: auto; /* Висота блока, де розміщена фотографія (змініть на потрібну вам висоту) */
+
+  background-size: cover; /* Масштабувати фон так, щоб він покривав весь блок */
+  background-position: center; /* Центрувати фон */
+}
 .wrapDesc {
   width: auto;
   height: auto;
@@ -76,9 +85,8 @@
   color: #ffdb00;
 }
 .aiFillSetting {
-  align-self: flex-end;
   font-size: 35px;
-  margin-right: 20px;
+
   cursor: pointer;
   color: var(--colred-color);
 }
@@ -125,4 +133,123 @@
   font-size: 20px;
   font-family: var(--custom-font);
   color: white;
+}
+.wrapOut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: auto;
+  margin-right: 20px;
+  height: 100%;
+}
+.quit {
+  font-family: var(--custom-font);
+  color: var(--red-color);
+  font-size: 20px;
+  margin-top: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+.changeDataWrap {
+  position: fixed;
+  width: 70%;
+  border-radius: 30px;
+  height: auto;
+  padding-bottom: 30px;
+  background: #3e51c1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.changeDataWrapSmall {
+  width: 95%;
+  height: 95%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nameCountWrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.countH2 {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 111%;
+  color: white;
+}
+.countSvg {
+  margin-right: 15px;
+  margin-top: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-self: flex-end;
+  font-size: 30px;
+  color: white;
+}
+.changeDataWrapSmall {
+  width: 95%;
+  height: 95%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nameCountWrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.countH2 {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 111%;
+  color: white;
+}
+.inputWrapCard {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.inputChangeName {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 111%;
+  color: white;
+}
+.likeButtonChange {
+  width: 227px;
+  height: 60px;
+  background: #f7cb25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 117.5%;
+  /* or 21px */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: none;
+  margin-top: 30px;
+  color: #3e3092;
+  cursor: pointer;
 }

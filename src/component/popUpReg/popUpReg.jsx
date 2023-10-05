@@ -3,6 +3,25 @@ import { useTranslation, Trans } from "react-i18next";
 import { AiOutlineClose } from "react-icons/ai";
 import newtonUkr from "../../img/logoUkr.webp";
 import { useEffect, useState } from "react";
+import { doc, setDoc, getDoc } from "firebase/firestore";
+import {
+  auth,
+  db,
+  googleAuthProvider,
+  appleProvider,
+  facebookProvider,
+} from "../../function/firebase";
+import {
+  OAuthProvider,
+  signInWithRedirect,
+  FacebookAuthProvider,
+} from "firebase/auth";
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithPopup,
+} from "firebase/auth";
 import PopUpEnter from "./popUpEnter";
 export default function PopUpReg({ setPopUp, setEnter }) {
   const { t, i18n } = useTranslation();
@@ -68,6 +87,60 @@ export default function PopUpReg({ setPopUp, setEnter }) {
     const value = e.target.value;
     setPhone(value);
   };
+  const signUp = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await createUserWithEmailAndPassword(auth, email, phone);
+
+      await setDoc(doc(db, "users", res.user.uid), {
+        uid: res.user.uid,
+        displayName: name,
+        email: res.user.email,
+        photo: res.user.photoURL,
+        category: "неоплачений",
+        myCourse: [],
+        mySubscriptions: [],
+        myMessage: [],
+        signed: "false",
+        discount: "0",
+        kraftic: "0",
+      });
+      setPopUp(false);
+    } catch (error) {
+      alert("The user with this login is not registered", error);
+    }
+  };
+  const singInWithGoogle = async (e) => {
+    e.preventDefault();
+    signInWithPopup(auth, googleAuthProvider)
+      .then(async (result) => {
+        const userDocRef = doc(db, "users", result.user.uid);
+        const userDocSnap = await getDoc(userDocRef);
+
+        if (!userDocSnap.exists()) {
+          await setDoc(userDocRef, {
+            uid: result.user.uid,
+            displayName: result.user.displayName,
+            email: result.user.email,
+            photo: result.user.photoURL,
+            phone: result.user.phoneNumber,
+            category: "неоплачений",
+            myCourse: [],
+            mySubscriptions: [],
+            myMessage: [],
+            signed: "false",
+            discount: "0",
+            kraftic: "0",
+          });
+        }
+        setPopUp(false);
+      })
+      .catch((err) => {
+        console.log("Error");
+      });
+  };
+
   return (
     <section className={css.popUpWrapAll}>
       <div className={css.formAllWrap}>
@@ -117,10 +190,14 @@ export default function PopUpReg({ setPopUp, setEnter }) {
             onChange={(e) => namePhone(e)}
             onBlur={(e) => blurHandle(e)}
           />
-          <button disabled={isSubmitDisabled} className={css.buttonFormicSend}>
+          <button onClick={singInWithGoogle} className={css.buttonFormicSend}>
             {t("description.part1.cabinet.regGoo")}
           </button>
-          <button disabled={isSubmitDisabled} className={css.buttonFormicSend}>
+          <button
+            onClick={signUp}
+            disabled={isSubmitDisabled}
+            className={css.buttonFormicSend}
+          >
             {t("description.part1.cabinet.regP")}
           </button>
         </div>

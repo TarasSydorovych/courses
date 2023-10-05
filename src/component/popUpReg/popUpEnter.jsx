@@ -1,8 +1,28 @@
 import css from "./popUp.module.css";
 import { useTranslation, Trans } from "react-i18next";
 import { AiOutlineClose } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
+import { doc, setDoc, getDoc } from "firebase/firestore";
 import newtonUkr from "../../img/logoUkr.webp";
 import { useEffect, useState } from "react";
+import {
+  OAuthProvider,
+  signInWithRedirect,
+  FacebookAuthProvider,
+} from "firebase/auth";
+import {
+  auth,
+  db,
+  googleAuthProvider,
+  appleProvider,
+  facebookProvider,
+} from "../../function/firebase";
+import {
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithPopup,
+} from "firebase/auth";
 export default function PopUpEnter({ setPopUp, setEnter }) {
   const { t, i18n } = useTranslation();
   const [name, setName] = useState("");
@@ -66,6 +86,44 @@ export default function PopUpEnter({ setPopUp, setEnter }) {
     const value = e.target.value;
     setPhone(value);
   };
+  const singInWithGoogle = async (e) => {
+    e.preventDefault();
+    signInWithPopup(auth, googleAuthProvider)
+      .then(async (result) => {
+        const userDocRef = doc(db, "users", result.user.uid);
+        const userDocSnap = await getDoc(userDocRef);
+
+        if (!userDocSnap.exists()) {
+          await setDoc(userDocRef, {
+            uid: result.user.uid,
+            displayName: result.user.displayName,
+            email: result.user.email,
+            photo: result.user.photoURL,
+            category: "неоплачений",
+            myCourse: [],
+            mySubscriptions: [],
+            myMessage: [],
+            signed: "false",
+            discount: "0",
+            kraftic: "0",
+          });
+        }
+        setEnter(false);
+      })
+      .catch((err) => {
+        console.log("Error");
+      });
+  };
+  const signUp = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await signInWithEmailAndPassword(auth, email, phone);
+      setEnter(false);
+    } catch (error) {
+      alert("The user with this login is not registered", error);
+    }
+  };
   return (
     <section className={css.popUpWrapAll}>
       <div className={css.formAllWrap}>
@@ -101,10 +159,14 @@ export default function PopUpEnter({ setPopUp, setEnter }) {
             onChange={(e) => namePhone(e)}
             onBlur={(e) => blurHandle(e)}
           />
-          <button disabled={isSubmitDisabled} className={css.buttonFormicSend}>
+          <button onClick={singInWithGoogle} className={css.buttonFormicSend}>
             {t("description.part1.cabinet.regGoo")}
           </button>
-          <button disabled={isSubmitDisabled} className={css.buttonFormicSend}>
+          <button
+            onClick={signUp}
+            disabled={isSubmitDisabled}
+            className={css.buttonFormicSend}
+          >
             {t("description.part1.cabinet.en")}
           </button>
         </div>

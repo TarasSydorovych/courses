@@ -4,11 +4,11 @@ import keyWord from "../../function/keyWord";
 import FirstSection from "./firstSection";
 import ListProp from "./listProp";
 import ListOfCourse from "./listOfCourse";
-export default function Cabinet() {
+export default function Cabinet({ activeUser }) {
   const { t, i18n } = useTranslation();
   return (
     <section className={css.cabinetWrap}>
-      <FirstSection t={t} />
+      <FirstSection t={t} activeUser={activeUser} />
       <ListProp t={t} />
       <ListOfCourse t={t} />
     </section>
