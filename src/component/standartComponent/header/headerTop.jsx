@@ -7,6 +7,7 @@ import {
 import en from "../../../img/lanEng.jpg";
 import ukr from "../../../img/lanUkr.jpg";
 import { useState } from "react";
+import logoUkr from "../../../img/logoUkr.webp";
 import { useNavigate } from "react-router-dom";
 import PopUpReg from "../../popUpReg/popUpReg";
 import PopUpEnter from "../../popUpReg/popUpEnter";
@@ -28,15 +29,7 @@ export default function HeaderTop({ t, activeUser }) {
         <AiOutlineInstagram className={css.iOutlineInstagram} />
         <AiOutlineWhatsApp className={css.whatApp} />
       </div>
-      <div className={css.wrapCenter}>
-        <div className={css.wrapLang}>
-          <img src={en} className={css.picLan} />
-        </div>
-
-        <div className={css.wrapLang}>
-          <img src={ukr} className={css.picLan} />
-        </div>
-      </div>
+      <img src={logoUkr} alt="ньютонові яблучка" className={css.logoSt} />
 
       <div className={css.wrapLogin}>
         <div className={css.wrapLog} onClick={showReg}>

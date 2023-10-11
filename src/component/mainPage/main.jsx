@@ -5,6 +5,8 @@ import Slider from "./slider";
 import SmallAbout from "./smallAbout";
 import NewCourse from "./newCourse";
 import WhyChouseUs from "./whyChoseUs";
+import BigAbout from "./bigAbout";
+import Feature from "./feature";
 export default function Main() {
   const { t, i18n } = useTranslation();
   keyWord(
@@ -16,6 +18,8 @@ export default function Main() {
     <>
       <Slider t={t} />
       <SmallAbout t={t} />
+      <BigAbout t={t} />
+      <Feature t={t} />
       <NewCourse t={t} />
       <WhyChouseUs t={t} />
     </>

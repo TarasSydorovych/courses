@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500&family=Roboto:wght@700&display=swap");
 :root {
   --standart-color: #ffdb00;
   --secondary-color: #118bd7;
   --red-color: #3e3092;
   --colred-color: #f4223c;
-
+  --cufredoc-font: "Fredoka", sans-serif;
   --custom-font: Ubuntu;
 }
 .sliderWrap {
@@ -23,86 +24,101 @@
   height: 700px;
 }
 .smallAboutWrap {
-  width: calc(100% - 100px);
-  padding: 50px;
-  height: auto;
-  background: #7fc11e;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-.smallAbFirstWrap {
-  width: 40%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.aboutH1 {
-  font-family: var(--custom-font);
-  font-size: 40px;
-  color: white;
-  margin-bottom: 0;
-}
-.aboutP {
-  font-family: var(--custom-font);
-  font-size: 25px;
-  color: white;
-  width: 90%;
-}
-.buttonLinkAbout {
-  width: 161px;
-  height: 60px;
-  color: white;
+  width: 100%;
+  height: 320px;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.smalWr {
+  width: 80%;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+}
+.h1BlockinTit {
+  font-family: var(--custom-font);
+  text-align: center;
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  transition: transform 0.8s ease;
+  display: inline-block;
+}
+.wrapBlockInfo:hover .h1BlockinTit {
+  transform: rotate(360deg);
+}
+.wrapBlockInfo:hover .descBlockIn {
+  transform: rotate(360deg);
+}
+.descBlockIn {
+  font-family: var(--custom-font);
+  text-align: center;
+  color: white;
+  font-size: 17px;
+  width: 70%;
+  margin-bottom: 30px;
+  transition: transform 0.8s ease;
+  display: inline-block;
+}
+.wrapBlockInfo {
+  width: calc(288px - 20px);
+  height: 380px;
+  background: #0098ff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+}
+.wrapBlockInfo:nth-of-type(2) {
+  background: #9bc800;
+}
+.wrapBlockInfo:nth-of-type(3) {
+  background: #ff7203;
+}
+.wrapBlockInfo:nth-of-type(4) {
+  background: #c810a2;
+}
+.buttonInBlock {
+  position: absolute;
+  top: calc(60%);
+  height: 50px;
+  width: 190px;
+  border-radius: 5px;
+  border: none;
+  background: white;
+  color: #3e3092;
   font-family: var(--custom-font);
   font-size: 20px;
-  background: #f4223c;
-  text-decoration: none;
+  cursor: pointer;
   font-weight: bold;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Плавний перехід з прозорістю тривалістю 0.3 секунди */
 }
-.picWrapKid {
-  width: 40%;
+.wrapBlockInfo:hover .buttonInBlock {
+  visibility: visible;
+  opacity: 1;
+}
+.wrapPicFirst {
+  width: 60%;
   height: auto;
-  position: relative;
-  margin-left: 30px;
-}
-.kid3 {
-  width: 334px;
-  height: 334px;
-  border-radius: 50%;
-  position: absolute;
-  top: 0px;
-  left: calc(50% - 165px);
-  z-index: 2;
-}
-.kid1 {
-  width: 201px;
-  height: 201px;
-  border-radius: 50%;
-  position: absolute;
-  top: 250px;
-  left: calc(50% - 265px);
-}
-.kid2 {
-  width: 278px;
-  height: 278px;
-  border-radius: 50%;
-  position: absolute;
-  top: 180px;
-  left: calc(50%);
-  z-index: 3;
 }
 .newCourseWrap {
-  padding: 50px;
-  width: calc(100% - 100px);
+  width: calc(100%);
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--colred-color);
+  margin-top: 50px;
 }
 .newCourseH2 {
   font-family: var(--custom-font);
@@ -203,4 +219,231 @@
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
+}
+.sectionAboutBigWrap {
+  margin-top: 100px;
+  width: calc(100% - 40px);
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.firstPInBigAvo {
+  font-family: var(--cufredoc-font);
+  color: #ff7203;
+  font-size: 25px;
+  margin-bottom: 0;
+  font-weight: bolder;
+}
+.bigAbH2 {
+  font-family: var(--cufredoc-font);
+  color: #482f92;
+  font-size: 60px;
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.pNearH {
+  font-family: var(--cufredoc-font);
+  color: #7965b5;
+  font-size: 20px;
+  width: 60%;
+  text-align: center;
+}
+.blockWithPicture {
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  margin-top: 50px;
+}
+.pic1 {
+  position: absolute;
+  width: 580px;
+  height: 435px;
+  top: 400px;
+  right: calc(50% - 217px);
+}
+.pic5 {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 450px;
+  right: calc(65%);
+}
+.pic4 {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 450px;
+  right: calc(23%);
+}
+.pic3 {
+  position: absolute;
+  width: auto;
+  height: auto;
+
+  right: calc(55%);
+}
+.pic2 {
+  position: absolute;
+  width: auto;
+  height: auto;
+
+  right: calc(35%);
+}
+.star {
+  width: 80px;
+  height: 80px;
+  clip-path: polygon(
+    50% 0%,
+    66% 26%,
+    98% 35%,
+    76% 59%,
+    86% 91%,
+    49% 76%,
+    13% 94%,
+    26% 60%,
+    2% 35%,
+    31% 28%
+  );
+  background: #9bc800;
+  position: absolute;
+  left: 20%;
+  top: 80px;
+}
+.cir {
+  background: #c810a2;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  left: 70%;
+  top: 180px;
+}
+.svgN {
+  position: absolute;
+  left: 60%;
+  top: 740px;
+}
+.wrapBubuleDlock {
+  width: 70%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.bubleWrap {
+  width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+.svgWrap {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pInSvg {
+  position: absolute;
+  z-index: 3;
+  font-family: var(--cufredoc-font);
+  font-size: 60px;
+  color: white;
+}
+.h4Prof {
+  color: #0098ff;
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: var(--cufredoc-font);
+  margin-bottom: 10px;
+}
+.pProf {
+  font-size: 20px;
+  text-align: center;
+  font-family: var(--cufredoc-font);
+  color: #806fb4;
+}
+.wrapNewLessons {
+  width: 70%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.lessonsWrap {
+  width: 600px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+}
+.pictureStyleLes {
+  background-size: cover;
+  width: 100%;
+  height: 293px;
+}
+.informBlLessWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 30px;
+  background: #0098ff;
+  width: calc(100% - 30px);
+  height: 207px;
+  border-radius: 0 0 10px 10px;
+}
+.courseName {
+  font-family: var(--cufredoc-font);
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+.courseDesc {
+  font-family: var(--cufredoc-font);
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+}
+.buttonLesson {
+  width: 150px;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  background: white;
+  color: var(--red-color);
+  font-family: var(--cufredoc-font);
+  font-size: 20px;
+  font-weight: bold;
+}
+.circulAgeWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--red-color);
+  font-size: 19px;
+  transform: rotate(-20deg);
+  font-weight: bolder;
+  text-align: center;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #ff7203;
+  top: calc(293px - 50px);
+  right: 50px;
 }

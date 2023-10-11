@@ -8,6 +8,7 @@ import Main from "./component/mainPage/main";
 import Footer from "./component/standartComponent/footer/footer";
 import Contact from "./component/contact/contact";
 import Cabinet from "./component/cabinet/cabinet";
+import Course from "./component/course/course";
 
 function App() {
   const [windowDimensions, setWindowDimensions] = useState(false);
@@ -34,6 +35,7 @@ function App() {
       <Header setActiveUser={setActiveUser} activeUser={activeUser} />
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/course" element={<Course />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cabinet" element={<Cabinet activeUser={activeUser} />} />
       </Routes>
