@@ -7,7 +7,7 @@ i18n
   .use(initReactI18next)
   .init({
     debug: true,
-    fallbackLng: "ua",
+    fallbackLng: "en",
     interpolation: {
       escapeValue: false,
     },
@@ -15,7 +15,45 @@ i18n
       en: {
         translation: {
           description: {
-            part1: {},
+            part1: {
+              header: {
+                log: "Log In",
+                main: "Home",
+                about: "About Us",
+                course: "Courses",
+                vidguk: "Reviews",
+                cabinet: "Account",
+                contact: "Contact",
+                aboutTit: "About Us",
+                aboutDesc:
+                  "'Newton's Apples' is a fun and creative company specializing in creating engaging and educational lessons for children. Our mission is to make learning interesting and accessible for young scholars. We combine science and entertainment to create unique educational programs that develop not only knowledge but also a love for learning. With 'Newton's Apples,' every day is a new opportunity to discover the wonders of the world through fun and educational adventures. Allow your child to explore the most exciting with 'Newton's Apples'.",
+                aboutBut: "Read More",
+                news: "Our News",
+                goTo: "Go to Course",
+                whyChooseTitle: "Why Parents Choose Newton's Apples?",
+                whyChouseBut: "Learn More",
+                whyChooseDesc:
+                  "Parents choose \"Newton's Apples\" because of our unwavering commitment to children's education. Our company offers the best lessons and educational programs to help children gain the knowledge, skills, and values necessary for their future success. We believe that learning should be exciting and inspiring, and that is exactly what we provide to your children every day.",
+                newton: "Newton's Apples",
+                webUI: " WebUi-Studio Development and Support",
+                blockOneTitle: "Pencil Drawing Lessons",
+                blockOneDesc: "Drawing lessons for any age",
+                buttonBlockOne: "Learn More",
+                bigAbFirspP: "Awaken the Genius in Your Child",
+                pPidH:
+                  "The teacher builds lessons taking into account the individual characteristics of each student. The lessons are aimed at revealing the child's potential. It is very important that the child finds it interesting. We select only interesting and useful programs.",
+                whyUsTitle: "Why Us?",
+                wyUsDesc: "Our Advantages",
+                prof: "Professionalism",
+                profDesc:
+                  "Lessons for preschoolers from 8 months to 7 years. Small groups - up to 8 children",
+                ourNews: "New Arrivals",
+                ourNewsH: "Check out our new lessons",
+                courseName: "Pencil Drawing Lesson",
+                courseDesc:
+                  "This lesson will teach you to use various interesting drawing styles",
+              },
+            },
             seo: {},
           },
         },

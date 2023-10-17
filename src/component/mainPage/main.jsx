@@ -7,12 +7,16 @@ import NewCourse from "./newCourse";
 import WhyChouseUs from "./whyChoseUs";
 import BigAbout from "./bigAbout";
 import Feature from "./feature";
+import { useEffect } from "react";
 export default function Main() {
   const { t, i18n } = useTranslation();
   keyWord(
     `${t("description.seo.contact.title")}`,
     `$${t("description.seo.contact.description")}`
   );
+  useEffect(() => {
+    i18n.changeLanguage("en");
+  }, []);
 
   return (
     <>
@@ -21,7 +25,6 @@ export default function Main() {
       <BigAbout t={t} />
       <Feature t={t} />
       <NewCourse t={t} />
-      <WhyChouseUs t={t} />
     </>
   );
 }

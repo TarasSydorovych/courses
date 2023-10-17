@@ -15,7 +15,7 @@ export default function HeaderTop({ t, activeUser }) {
   const navigate = useNavigate();
   const [popUp, setPopUp] = useState(false);
   const [enter, setEnter] = useState(false);
-  console.log(activeUser);
+
   const showReg = () => {
     if (activeUser) {
       navigate("/cabinet");

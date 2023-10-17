@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+:root {
+  --standart-color: #ffdb00;
+  --secondary-color: #118bd7;
+  --red-color: #3e3092;
+  --colred-color: #f4223c;
+  --colforic-color: #0098ff;
+  --colgr-color: #9ac900;
+  --correg-color: #ff7100;
+  --custom-font: "Roboto", sans-serif;
+}
+.wrapButtonIn {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+.buttonLog {
+  width: 200px;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Work Sans", Arial, Tahoma;
+  color: white;
+  font-size: 20px;
+  background: #27ba7a;
+}
+.listCorrect {
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+}
+.ulList {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+}
+.liList {
+  font-family: var(--custom-font);
+  font-size: 25px;
+  cursor: pointer;
+  margin: 0;
+  width: 250px;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondary-color);
+  color: white;
+}
+.wrapCha {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.addAutoWrap {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapAddAutoForm {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.wrpNewItem {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inpAddAuto {
+  width: 60%;
+}
+.wrapPicList {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ulWrapPic {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+.liWrapPic {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.imgInWr {
+  width: 300px;
+  height: auto;
+}
+.versionWrap {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.useCategoryWrap {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.versionWrUl {
+  width: 80%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+}
+.versionWrLi {
+  font-family: var(--custom-font);
+  width: 250px;
+  height: 60px;
+  background: var(--colgr-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+}
+.versionWrLiCat {
+  font-family: var(--custom-font);
+  width: 250px;
+  height: 60px;
+  background: var(--correg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.inpWrap {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.secWrap {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.addCategory {
+  width: 500px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.addVideo {
+  width: 700px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.useVideo {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.nameInput {
+  font-family: var(--custom-font);
+  font-size: 20px;
+}
+.inputInCat {
+  width: 195px;
+  border-radius: 5px;
+  font-family: var(--custom-font);
+  font-size: 20px;
+  height: 50px;
+}
+.catNButton {
+  width: 150px;
+  height: 50px;
+  margin-top: 20px;
+  border: none;
+  background: var(--colred-color);
+  border-radius: 5px;
+  color: white;
+  font-family: var(--custom-font);
+  font-size: 20px;
+}
+.categoryList {
+  width: 500px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ulDelCat {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+}
+.ulDelCatLi {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: var(--custom-font);
+  margin-top: 20px;
+}
+.buttDelete {
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background: var(--colgr-color);
+}
+.subcategories {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.wrapAllNeed {
+  display: flex;
+}
+.wrapAllInput {
+  display: flex;
+  flex-direction: column;
+}
+.addNew {
+  background: var(--colgr-color);
+  color: white;
+  border: none;
+}
+#uploadprogresscontainer {
+  width: 100%;
+  background-color: #ccc;
+}
+
+#uploadprogressbar {
+  width: 0;
+  height: 30px;
+  background-color: #4caf50;
+  transition: width 0.3s;
+}
+.wrapLoad {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tableStyle {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.trueTableSt {
+  width: 95%;
+}
+
+.trueTableSt th,
+.trueTableSt td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.trueTableSt th {
+  background-color: #f5f5f5;
+}
+
+.trueTableSt th:nth-child(1) {
+  width: 10%;
+}
+
+.trueTableSt th:nth-child(5) {
+  width: 20%;
+}
+
+.trueTableSt input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.trueTableSt p {
+  margin: 0;
+}
