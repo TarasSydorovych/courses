@@ -134,13 +134,13 @@ const UseVideo = ({ data }) => {
                   {editFields[product.uid] ? (
                     <input
                       type="text"
-                      value={editFields[product.uid].pidCategoryName}
+                      value={editFields[product.uid].courseName}
                       onChange={(e) =>
-                        handleEditFieldChange(e, product.uid, "pidCategoryName")
+                        handleEditFieldChange(e, product.uid, "courseName")
                       }
                     />
                   ) : (
-                    product.pidCategoryName
+                    product.courseName
                   )}
                 </td>
                 <td>

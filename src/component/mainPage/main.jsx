@@ -14,9 +14,9 @@ export default function Main() {
     `${t("description.seo.contact.title")}`,
     `$${t("description.seo.contact.description")}`
   );
-  useEffect(() => {
-    i18n.changeLanguage("en");
-  }, []);
+  // useEffect(() => {
+  //   i18n.changeLanguage("en");
+  // }, []);
 
   return (
     <>

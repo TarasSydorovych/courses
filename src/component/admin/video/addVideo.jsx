@@ -33,7 +33,7 @@ const AddVideo = ({ data }) => {
   const [progresFotoSt, setProgresFotoSt] = useState(false);
   useEffect(() => {
     if (data.length > 0) {
-      setSelectedPidCategory(data[0].categoryName);
+      setSelectedPidCategory(data[0].courseName);
     }
   }, [data]);
   const ageGroupFunc = (e) => {
@@ -47,66 +47,13 @@ const AddVideo = ({ data }) => {
       progressBar.style.width = `${progress}%`;
     }
   };
-
-  //   const addCategoryDocument = async () => {
-  //     try {
-  //       const docRef = await addDoc(collection(db, "video"), {
-  //         uid: "",
-  //         videoName: videoName,
-  //         pidCategoryName: selectedPidCategory,
-  //         whotNeed: whotNeed,
-  //         ageGroup: ageGroup,
-  //         photoURL: "", // Порожнє посилання на фото
-  //         videoURL: "", // Порожнє посилання на відео
-  //         createdOn: serverTimestamp(),
-  //       });
-  //       const newDocId = docRef.id;
-  //       await updateDoc(doc(db, "video", newDocId), {
-  //         uid: newDocId,
-  //       });
-  //       // Перевіряємо, чи storage ініціалізовано перед використанням
-  //       if (storage) {
-  //         if (photoFile) {
-  //           const photoRef = ref(storage, `photos/${uid}-${photoFile.name}`);
-  //           await uploadBytes(photoRef, photoFile);
-  //           const photoURL = await getDownloadURL(photoRef);
-
-  //           // Оновлюємо поле 'photoURL' в Firestore документі
-  //           await updateDoc(doc(db, "video", newDocId), {
-  //             photoURL: photoURL,
-  //           });
-  //         }
-
-  //         if (videoFile) {
-  //           const videoRef = ref(storage, `videos/${uid}-${videoFile.name}`);
-  //           await uploadBytes(videoRef, videoFile);
-  //           const videoURL = await getDownloadURL(videoRef);
-
-  //           // Оновлюємо поле 'videoURL' в Firestore документі
-  //           await updateDoc(doc(db, "video", newDocId), {
-  //             videoURL: videoURL,
-  //           });
-  //         }
-  //       } else {
-  //         console.error("Firebase storage is not properly initialized.");
-  //         alert("Помилка: Firebase Storage не ініціалізовано правильно.");
-  //       }
-
-  //       console.log("Document added with ID: ", docRef.id);
-  //       alert("Підкатегорію додано");
-  //       window.location.reload();
-  //     } catch (error) {
-  //       console.error("Error adding document: ", error);
-  //       alert("Підкатегорію не додано");
-  //     }
-  //   };
   const addCategoryDocument = async () => {
     try {
       // Створюємо Firestore документ
       const docRef = await addDoc(collection(db, "video"), {
         uid: "",
         videoName: videoName,
-        pidCategoryName: selectedPidCategory,
+        courseName: selectedPidCategory,
         whotNeed: whotNeed,
         ageGroup: ageGroup,
         photoURL: "", // Порожнє посилання на фото
@@ -244,8 +191,8 @@ const AddVideo = ({ data }) => {
           onChange={handleCategoryChange}
         >
           {data.map((category, index) => (
-            <option key={index} value={category.categoryName}>
-              {category.categoryName}
+            <option key={index} value={category.courseName}>
+              {category.courseName}
             </option>
           ))}
         </select>
@@ -311,4 +258,4 @@ const AddVideo = ({ data }) => {
     </section>
   );
 };
-export default withFirebaseCollection("pidCategoryUa")(AddVideo);
+export default withFirebaseCollection("course")(AddVideo);

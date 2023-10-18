@@ -53,6 +53,15 @@ i18n
                 courseDesc:
                   "This lesson will teach you to use various interesting drawing styles",
               },
+              courses: {
+                title: "Online Courses for Children by Newton's Apples",
+                descTitle:
+                  "Explore a world of creativity with our online courses for children by Newton's Apples. Join us for courses in drawing, sculpting, and more – where imagination knows no bounds!",
+                descUlFirst: "HD Quality Videos",
+                descUlSecond: "24/7 Video Access",
+                descULThre: "Online Support",
+                descULFour: "Convenient Payment Methods",
+              },
             },
             seo: {},
           },
@@ -132,6 +141,15 @@ i18n
                 phone: "Телефон",
                 foto: "Фото",
                 upData: "Обновити данні",
+              },
+              courses: {
+                title: "Онлайн курси для дітей від Ньютонових яблучок",
+                descTitle:
+                  "Досліджуйте світ творчості разом з нашими онлайн-курсами для дітей від Ньютонових яблучок. Приєднуйтесь до нас на курсах з малювання, ліплення та багато інших видів мистецтва, де уява не має меж!",
+                descUlFirst: "Відео в HD якості",
+                descUlSecond: "Доступ до відео 24/7",
+                descULThre: "Пдтримка онлайн",
+                descULFour: "Зручні методи оплати",
               },
             },
             seo: {},

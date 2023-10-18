@@ -20,7 +20,7 @@ import { getStorage } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
 import { useEffect, useState } from "react";
 
-const AddVideo = ({ data }) => {
+const AddCourseCom = ({ data }) => {
   const storage = getStorage();
 
   const [videoName, setVideoName] = useState("");
@@ -29,9 +29,11 @@ const AddVideo = ({ data }) => {
   const [ageGroup, setAgeGroup] = useState("");
   const uid = uuidv4();
   const [photoFile, setPhotoFile] = useState(null);
-  const [videoFile, setVideoFile] = useState(null);
-  const [progresVideoSt, setProgresVideoSt] = useState(false);
+  const [coursePrice, setCoursePrice] = useState("");
   const [progresFotoSt, setProgresFotoSt] = useState(false);
+  const price = (e) => {
+    setCoursePrice(e.target.value);
+  };
   useEffect(() => {
     if (data.length > 0) {
       setSelectedPidCategory(data[0].categoryName);
@@ -54,12 +56,12 @@ const AddVideo = ({ data }) => {
       // Створюємо Firestore документ
       const docRef = await addDoc(collection(db, "course"), {
         uid: "",
-        videoName: videoName,
+        courseName: videoName,
         pidCategoryName: selectedPidCategory,
-        whotNeed: whotNeed,
+
         ageGroup: ageGroup,
         photoURL: "", // Порожнє посилання на фото
-        videoURL: "", // Порожнє посилання на відео
+
         createdOn: serverTimestamp(),
       });
       const newDocId = docRef.id;
@@ -94,47 +96,8 @@ const AddVideo = ({ data }) => {
               await updateDoc(doc(db, "course", newDocId), {
                 photoURL: photoURL,
               });
-
+              window.location.reload();
               // Завантаження відео
-              if (videoFile) {
-                const videoRef = ref(
-                  storage,
-                  `videos/${uid}-${videoFile.name}`
-                );
-                const videoUploadTask = uploadBytesResumable(
-                  videoRef,
-                  videoFile
-                );
-
-                // Обробка події завантаження відео
-                videoUploadTask.on(
-                  "state_changed",
-                  (snapshot) => {
-                    setProgresFotoSt(false);
-                    setProgresVideoSt(true);
-                    // Отримуємо прогрес завантаження відео
-                    const videoProgress =
-                      (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                    updateProgressBar(videoProgress);
-                  },
-                  (error) => {
-                    console.error("Error during video upload: ", error);
-                  },
-                  async () => {
-                    // Завершено завантаження відео, отримуємо посилання на відео
-                    const videoURL = await getDownloadURL(videoRef);
-
-                    // Оновлюємо поле 'videoURL' в Firestore документі
-                    await updateDoc(doc(db, "course", newDocId), {
-                      videoURL: videoURL,
-                    });
-
-                    setProgresVideoSt(false);
-                    alert("Відео додано");
-                    window.location.reload();
-                  }
-                );
-              }
             }
           );
         }
@@ -166,19 +129,10 @@ const AddVideo = ({ data }) => {
     setPhotoFile(file);
   };
 
-  const handleVideoFileChange = (e) => {
-    const file = e.target.files[0];
-    setVideoFile(file);
-  };
-  const handleSubcategoryChange = (e, index) => {
-    const updatedSubcategories = [...whotNeed];
-    updatedSubcategories[index] = e.target.value;
-    setWhotNeed(updatedSubcategories);
-  };
   return (
     <section className={css.addVideo}>
       <div className={css.inpWrap}>
-        <p className={css.nameInput}>Назва відео Українською</p>
+        <p className={css.nameInput}>Назва курсу Українською</p>
         <input
           className={css.inputInCat}
           value={videoName}
@@ -208,36 +162,20 @@ const AddVideo = ({ data }) => {
         />
       </div>
       <div className={css.inpWrap}>
+        <p className={css.nameInput}>Вартість курсу</p>
+        <input
+          className={css.inputInCat}
+          value={coursePrice}
+          onChange={price}
+        />
+      </div>
+      <div className={css.inpWrap}>
         <label className={css.nameInput}>Виберіть фото:</label>
         <input type="file" accept="image/*" onChange={handlePhotoFileChange} />
       </div>
 
       {/* Інпут для вибору відео */}
-      <div className={css.inpWrap}>
-        <label className={css.nameInput}>Виберіть відео:</label>
-        <input type="file" accept="video/*" onChange={handleVideoFileChange} />
-      </div>
-      <div className={css.subcategories}>
-        <p className={css.nameInput}>Що потрібно для уроку</p>
-        <div className={css.wrapAllNeed}>
-          <div className={css.wrapAllInput}>
-            {whotNeed.map((subcategory, index) => (
-              <div key={index}>
-                <input
-                  type="text"
-                  name="subcategory"
-                  value={subcategory}
-                  onChange={(e) => handleSubcategoryChange(e, index)}
-                  placeholder="Що потрібно"
-                />
-              </div>
-            ))}
-          </div>
-          <button className={css.addNew} onClick={addSubcategoryInput}>
-            Додати ще
-          </button>
-        </div>
-      </div>
+
       <button className={css.catNButton} onClick={addCategoryDocument}>
         Зберегти
       </button>
@@ -252,4 +190,4 @@ const AddVideo = ({ data }) => {
     </section>
   );
 };
-export default withFirebaseCollection("pidCategoryUa")(AddVideo);
+export default withFirebaseCollection("pidCategoryUa")(AddCourseCom);

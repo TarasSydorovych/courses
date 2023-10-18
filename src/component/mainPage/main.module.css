@@ -49,12 +49,7 @@
   transition: transform 0.8s ease;
   display: inline-block;
 }
-.wrapBlockInfo:hover .h1BlockinTit {
-  transform: rotate(360deg);
-}
-.wrapBlockInfo:hover .descBlockIn {
-  transform: rotate(360deg);
-}
+
 .descBlockIn {
   font-family: var(--cufredoc-font);
   text-align: center;

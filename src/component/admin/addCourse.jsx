@@ -1,6 +1,7 @@
 import AddCourseCom from "./addCourseCom";
 import css from "./cabiner.module.css";
 import { useState, useEffect } from "react";
+import DelCourseCom from "./delCourseCom";
 export default function AddCourse() {
   const [addCourse, setAddCourse] = useState(false);
   const [delCourse, setDelCourse] = useState(false);
@@ -10,7 +11,7 @@ export default function AddCourse() {
   };
   const add = () => {
     setAddCourse(!addCourse);
-    delCourse(false);
+    setDelCourse(false);
   };
   return (
     <section className={css.useCategoryWrap}>
@@ -23,6 +24,7 @@ export default function AddCourse() {
         </li>
       </ul>
       {addCourse && <AddCourseCom />}
+      {delCourse && <DelCourseCom />}
     </section>
   );
 }
