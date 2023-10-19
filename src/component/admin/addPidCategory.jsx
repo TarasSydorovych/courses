@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import css from "./cabiner.module.css";
 import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
 import { db } from "../../function/firebase";
@@ -22,7 +22,6 @@ const AddCategory = ({ data }) => {
         uid: newDocId,
       });
 
-      console.log("Document added with ID: ", docRef.id);
       alert("Підкатегорію додано");
       window.location.reload();
     } catch (error) {
@@ -38,6 +37,11 @@ const AddCategory = ({ data }) => {
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
   };
+  useEffect(() => {
+    if (data.length > 0) {
+      setSelectedCategory(data[0].categoryName);
+    }
+  }, [data]);
 
   return (
     <section className={css.addCategory}>

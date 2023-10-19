@@ -63,3 +63,153 @@
   color: var(--secondary-color);
   margin-top: 10px;
 }
+.listCatAndProdWR {
+  width: 90%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: auto;
+}
+
+.ulForcategory {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+.liForCategory {
+  width: calc(100% - 40px);
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  border-radius: 5px;
+  background: #ff7200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--cufredoc-font);
+  cursor: pointer;
+  margin-top: 5px;
+}
+.pInLiCat {
+  color: white;
+  font-family: var(--cufredoc-font);
+  font-size: 20px;
+  font-weight: bold;
+}
+.aiOutlineDown {
+  color: white;
+  font-size: 25px;
+  flex-shrink: 1;
+}
+.subCategoryList {
+  width: calc(100% - 40px);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+}
+.subCategoryItem {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: var(--secondary-color);
+  margin-top: 5px;
+  cursor: pointer;
+  color: white;
+  font-family: var(--cufredoc-font);
+  font-size: 20px;
+}
+.wrapListCat {
+  width: 300px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+.courseWrapList {
+  width: 90%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.lessonsWrap {
+  width: 450px;
+  margin-right: 10px;
+  height: 500px;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+}
+.circulAgeWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--red-color);
+  font-size: 19px;
+  transform: rotate(-20deg);
+  font-weight: bolder;
+  text-align: center;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #ff7203;
+  top: calc(293px - 100px);
+  right: 20px;
+}
+.pictureStyleLes {
+  background-size: cover;
+  width: 100%;
+  height: 293px;
+}
+.informBlLessWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 30px;
+  background: #0098ff;
+  width: calc(100% - 30px);
+  height: 207px;
+  border-radius: 0 0 10px 10px;
+}
+.courseName {
+  font-family: var(--cufredoc-font);
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+.courseDesc {
+  font-family: var(--cufredoc-font);
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+}
+.buttonLesson {
+  width: 150px;
+  height: 60px;
+  border-radius: 10px;
+  border: none;
+  background: white;
+  color: var(--red-color);
+  font-family: var(--cufredoc-font);
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}

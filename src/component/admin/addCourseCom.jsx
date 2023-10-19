@@ -147,8 +147,8 @@ const AddCourseCom = ({ data }) => {
           onChange={handleCategoryChange}
         >
           {data.map((category, index) => (
-            <option key={index} value={category.categoryName}>
-              {category.categoryName}
+            <option key={index} value={category.pidCategoryName}>
+              {category.pidCategoryName}
             </option>
           ))}
         </select>
