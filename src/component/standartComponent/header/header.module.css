@@ -71,7 +71,7 @@
 }
 .wrapLogin {
   height: 100%;
-  width: auto;
+  width: 170px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -264,4 +264,20 @@
   font-weight: bold;
   color: white;
   text-decoration: none;
+}
+.wrapLanguage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 47px;
+}
+.theLanguage {
+  font-family: var(--cufredoc-font);
+  color: var(--colforic-color);
+}
+@media only screen and (max-width: 1540px) and (min-width: 1024px) {
+  .navigateUl {
+    padding: 0;
+    width: 95%;
+  }
 }

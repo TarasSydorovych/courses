@@ -10,6 +10,7 @@ import Contact from "./component/contact/contact";
 import Cabinet from "./component/cabinet/cabinet";
 import Course from "./component/course/course";
 import Admin from "./component/admin/admin";
+import TheCourse from "./component/theCourse/theCourse";
 function App() {
   const [windowDimensions, setWindowDimensions] = useState(false);
   const location = useLocation();
@@ -39,6 +40,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/cabinet" element={<Cabinet activeUser={activeUser} />} />
+        <Route path="/course/:id" element={<TheCourse />} />
       </Routes>
       <Footer />
     </>

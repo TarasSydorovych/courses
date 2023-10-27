@@ -456,3 +456,14 @@
   border-bottom-left-radius: 50% 30px; /* Задаємо радіус для нижнього лівого кута, створюючи хвилюсту форму */
   border-bottom-right-radius: 50% 30px; /* Задаємо радіус для нижнього правого кута, створюючи хвилюсту форму */
 }
+@media only screen and (max-width: 1540px) and (min-width: 1024px) {
+  .smalWr {
+    width: 95%;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+  }
+}

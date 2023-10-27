@@ -22,7 +22,7 @@ import { useEffect, useState } from "react";
 
 const AddCourseCom = ({ data }) => {
   const storage = getStorage();
-
+  const [description, setDescription] = useState("");
   const [videoName, setVideoName] = useState("");
   const [selectedPidCategory, setSelectedPidCategory] = useState(""); // Додайте стан для вибраної категорії
   const [whotNeed, setWhotNeed] = useState([""]); // Стан для зберігання масиву підкатегорій
@@ -31,6 +31,9 @@ const AddCourseCom = ({ data }) => {
   const [photoFile, setPhotoFile] = useState(null);
   const [coursePrice, setCoursePrice] = useState("");
   const [progresFotoSt, setProgresFotoSt] = useState(false);
+  const descFun = (e) => {
+    setDescription(e.target.value);
+  };
   const price = (e) => {
     setCoursePrice(e.target.value);
   };
@@ -58,7 +61,8 @@ const AddCourseCom = ({ data }) => {
         uid: "",
         courseName: videoName,
         pidCategoryName: selectedPidCategory,
-
+        coursePrice: coursePrice,
+        description: description,
         ageGroup: ageGroup,
         photoURL: "", // Порожнє посилання на фото
 
@@ -167,6 +171,14 @@ const AddCourseCom = ({ data }) => {
           className={css.inputInCat}
           value={coursePrice}
           onChange={price}
+        />
+      </div>
+      <div className={css.inpWrap}>
+        <p className={css.nameInput}>Опис курсу</p>
+        <textarea
+          className={css.inputInCat}
+          value={description}
+          onChange={descFun}
         />
       </div>
       <div className={css.inpWrap}>

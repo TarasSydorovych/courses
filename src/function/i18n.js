@@ -61,6 +61,37 @@ i18n
                 descUlSecond: "24/7 Video Access",
                 descULThre: "Online Support",
                 descULFour: "Convenient Payment Methods",
+                year: "years",
+                price: "Course price",
+                lesson: "lessons",
+                secondBlockTitle:
+                  "Engaging in the Newton's Apples proprietary methodology, your child:",
+                secFirst: "Learn to work with various creative materials",
+                secTwo: "Expand horizons",
+                secThre: "Develop creative thinking",
+                secFour: "Cultivate imagination",
+                secFive: "Enhance concentration and perseverance",
+                secSix: "Boost self-esteem and self-confidence",
+                secSeven: "Enjoy quality time with engaging activities",
+                titBlockOur: "Advantages of Our Online Courses",
+                advFirstTitle: "Very cost-effective",
+                advSecondTitle: "Flexible schedule",
+                advThreTitle: "Accessibility",
+                advFourTitle: "Result",
+                advFiveTitle: "Benefit",
+                advSixTitle: "Methodologies",
+                advDescFirst:
+                  "The cost of one lesson in the course is much cheaper than with an average teacher.",
+                advDescSecond:
+                  "You choose the learning schedule yourself, everything happens on a closed online platform at a convenient time for you.",
+                advDescThre:
+                  "Lessons are available from anywhere in the world 24/7, from any device. Don't waste your time on anything other than painting.",
+                advDescFour:
+                  "If it doesn't work out for you, we'll get results or give your money back.",
+                advDescFive:
+                  "Drawing develops: motor skills, spatial and hemispheric thinking, concentration, and your child's patience.",
+                advDescSix:
+                  "All methodologies are author's and tested on our own children and thousands of satisfied customers.",
               },
             },
             seo: {},
@@ -150,6 +181,37 @@ i18n
                 descUlSecond: "Доступ до відео 24/7",
                 descULThre: "Пдтримка онлайн",
                 descULFour: "Зручні методи оплати",
+                year: "роки",
+                price: "Вартість курсу",
+                lesson: "уроків",
+                secondBlockTitle:
+                  "Займаючись по авторській методиці від Ньютонових яблучок, Ваша дитина:",
+                secFirst: "Навчиться працювати з різними творчими матеріалами",
+                secTwo: "Розширить світогляд",
+                secThre: "Розвиток креативного мислення",
+                secFour: "Розвиток фантазії та уяви",
+                secFive: "Розвине концентрацію та наполегливість",
+                secSix: "Збільшить самооцінку та впевненість в собі",
+                secSeven: "Чудово проведе час за цікавим заняттям",
+                titBlockOur: "Переваги наших онлайн курсів",
+                advFirstTitle: "Дуже вигідно",
+                advSecondTitle: "Вільний графік",
+                advThreTitle: "Доступність",
+                advFourTitle: "Гарантія",
+                advFiveTitle: "Користь",
+                advSixTitle: "Методики",
+                advDescFirst:
+                  "Вартість одного уроку в курсі набагато дешевша, ніж заняття із середньостатистичним викладачем",
+                advDescSecond:
+                  "Графік навчання ви вибираєте самі, все відбувається на закритій онлайн платформі, у зручний для вас час.",
+                advDescThre:
+                  "Уроки доступні з будь-якої точки планети 24/7 з будь-якого пристрою. Не витрачайте свій час ні на що, окрім малювання.",
+                advDescFour:
+                  "Якщо у вас не вийде – ми доведемо до результату чи повернемо гроші.",
+                advDescFive:
+                  "Малювання розвиває: моторику, просторове і півкульне мислення, зосередженість та посидючість вашого малюка.",
+                advDescSix:
+                  "Всі методики авторські та перевірені на власних дітях і тисячах задоволених клієнтів.",
               },
             },
             seo: {},
