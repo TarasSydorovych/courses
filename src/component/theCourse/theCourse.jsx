@@ -17,6 +17,20 @@ const TheCourse = ({ data }) => {
     setSelectedCourse(course);
     console.log(course);
   }, [data, id, selectedCourse]);
+  const [scrollHeight, setScrollHeight] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollHeight = window.pageYOffset;
+      setScrollHeight(currentScrollHeight);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <section className={css.theCourseWrapAll}>
       {selectedCourse && (
@@ -24,7 +38,11 @@ const TheCourse = ({ data }) => {
       )}
       <SecondBlock t={t} />
       {selectedCourse && (
-        <VideoWrap selectedCourse={selectedCourse} setHowMush={setHowMush} />
+        <VideoWrap
+          scrollHeight={scrollHeight}
+          selectedCourse={selectedCourse}
+          setHowMush={setHowMush}
+        />
       )}
       <Advantage t={t} />
     </section>

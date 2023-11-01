@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
+
+:root {
+  --standart-color: #ffdb00;
+  --secondary-color: #118bd7;
+  --red-color: #3e3092;
+  --colred-color: #f4223c;
+  --cufredoc-font: "Fredoka", sans-serif;
+  --titletex-color: #414042;
+  --ptext-color: #73757b;
+  --blocab-color: #f1f2f2;
+  --custom-font: Ubuntu;
+}
+.modal {
+  width: 100%;
+  max-height: 90vh; /* Встановлюємо максимальну висоту на 80% висоти екрану */
+  overflow-y: auto; /* Додаємо вертикальну прокрутку, якщо контент перевищує максимальну висоту */
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 10px;
+}
+
+.modal::-webkit-scrollbar {
+  width: 6px;
+}
+.modal::-webkit-scrollbar-track {
+  background: rgba(62, 48, 146, 0.5);
+  border-radius: 10px;
+}
+.modal::-webkit-scrollbar-thumb {
+  background: #3e3092;
+  border-radius: 50px;
+}
+.one {
+  width: 100%;
+  height: 300px;
+  background: #118bd7;
+  flex-shrink: 0;
+}
+.two {
+  width: 100%;
+  height: 300px;
+
+  flex-shrink: 0;
+}
+.thr {
+  width: 100%;
+  height: 300px;
+  background: #414042;
+  flex-shrink: 0;
+}
+.four {
+  width: 100%;
+  height: 300px;
+
+  flex-shrink: 0;
+}
+
+/* Додайте стилі для кнопки закриття і інших частин модального вікна */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #007bff;
+}
+.close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+  color: var(--colred-color);
+}
+.allPop {
+  border-radius: 10px;
+}
+.videoStyleMp {
+  width: 100%;
+  height: auto;
+}
