@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import css from "./theCourse.module.css";
 import Product from "../product/product";
-const Video = ({ el, scrollHeight }) => {
+import { db, auth } from "../../function/firebase";
+import {
+  useAuth,
+  signInWithPopup,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
+import withFirebaseCollection from "../HOK/withFirebaseCollection";
+const Video = ({ el, scrollHeight, t, data }) => {
   const [bigVideo, setBigVideo] = useState(false);
+  const [productKey, setProductKey] = useState(0);
+
   const openModal = () => {
     setBigVideo(true);
   };
@@ -10,6 +20,7 @@ const Video = ({ el, scrollHeight }) => {
   const closeModal = () => {
     setBigVideo(false);
   };
+  useEffect(() => {}, [bigVideo]);
   return (
     <section className={css.theVideo}>
       <div className={css.wrapSmallVideo}>
@@ -25,13 +36,18 @@ const Video = ({ el, scrollHeight }) => {
       </div>
       {bigVideo && (
         <Product
+          setProductKey={setProductKey}
+          setBigVideo={setBigVideo}
+          autor={data}
           isOpen={bigVideo}
           onClose={closeModal}
           scrollHeight={scrollHeight}
-          el={el}
+          val={el}
+          t={t}
+          key={productKey} // Додаємо ключ
         />
       )}
     </section>
   );
 };
-export default Video;
+export default withFirebaseCollection("users")(Video);

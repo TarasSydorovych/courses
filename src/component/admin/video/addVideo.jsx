@@ -55,6 +55,9 @@ const AddVideo = ({ data }) => {
         videoName: videoName,
         courseName: selectedPidCategory,
         whotNeed: whotNeed,
+        counter: "1",
+        comment: [],
+        like: "1",
         ageGroup: ageGroup,
         photoURL: "", // Порожнє посилання на фото
         videoURL: "", // Порожнє посилання на відео

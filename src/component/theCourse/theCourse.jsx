@@ -15,7 +15,6 @@ const TheCourse = ({ data }) => {
   useEffect(() => {
     const course = data.find((course) => course.uid === id);
     setSelectedCourse(course);
-    console.log(course);
   }, [data, id, selectedCourse]);
   const [scrollHeight, setScrollHeight] = useState(0);
 
@@ -39,6 +38,7 @@ const TheCourse = ({ data }) => {
       <SecondBlock t={t} />
       {selectedCourse && (
         <VideoWrap
+          t={t}
           scrollHeight={scrollHeight}
           selectedCourse={selectedCourse}
           setHowMush={setHowMush}

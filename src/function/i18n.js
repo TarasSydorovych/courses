@@ -92,6 +92,15 @@ i18n
                   "Drawing develops: motor skills, spatial and hemispheric thinking, concentration, and your child's patience.",
                 advDescSix:
                   "All methodologies are author's and tested on our own children and thousands of satisfied customers.",
+                smalFotoDesc:
+                  "You can share the result of each lesson with us. We are very interested in what you've achieved! Just send us a photo of your work.",
+                whotNeed: "What you will need",
+                coment: "Comments",
+                addCom: "Leave a comment",
+                send: "Send",
+                nextLes: "Наступний урок",
+
+                nextLes: "Next lesson",
               },
             },
             seo: {},
@@ -212,6 +221,13 @@ i18n
                   "Малювання розвиває: моторику, просторове і півкульне мислення, зосередженість та посидючість вашого малюка.",
                 advDescSix:
                   "Всі методики авторські та перевірені на власних дітях і тисячах задоволених клієнтів.",
+                smalFotoDesc:
+                  "Ви можете поділитись з нами результатом кожного уроку. Нам дуже цікаво, що у Вас вийшло! Просто відправте нам фото Вашої роботи.",
+                whotNeed: "Що буде потрібно",
+                coment: "Коментарі",
+                addCom: "Залишити коментар",
+                send: "Відправити",
+                nextLes: "Наступний урок",
               },
             },
             seo: {},
