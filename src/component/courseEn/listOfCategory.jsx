@@ -99,4 +99,4 @@ const ListOfCategory = ({ data, category, setPidCat }) => {
   );
 };
 
-export default withFirebaseCollection("pidCategoryUa")(ListOfCategory);
+export default withFirebaseCollection("pidCategoryEn")(ListOfCategory);

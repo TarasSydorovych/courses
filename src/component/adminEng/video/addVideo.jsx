@@ -51,7 +51,7 @@ const AddVideo = ({ data }) => {
   const addCategoryDocument = async () => {
     try {
       // Створюємо Firestore документ
-      const docRef = await addDoc(collection(db, "video"), {
+      const docRef = await addDoc(collection(db, "videoEn"), {
         uid: "",
         videoName: videoName,
         courseName: selectedPidCategory,
@@ -66,7 +66,7 @@ const AddVideo = ({ data }) => {
         createdOn: serverTimestamp(),
       });
       const newDocId = docRef.id;
-      await updateDoc(doc(db, "video", newDocId), {
+      await updateDoc(doc(db, "videoEn", newDocId), {
         uid: newDocId,
       });
 
@@ -94,7 +94,7 @@ const AddVideo = ({ data }) => {
               const photoURL = await getDownloadURL(photoRef);
 
               // Оновлюємо поле 'photoURL' в Firestore документі
-              await updateDoc(doc(db, "video", newDocId), {
+              await updateDoc(doc(db, "videoEn", newDocId), {
                 photoURL: photoURL,
               });
 
@@ -128,7 +128,7 @@ const AddVideo = ({ data }) => {
                     const videoURL = await getDownloadURL(videoRef);
 
                     // Оновлюємо поле 'videoURL' в Firestore документі
-                    await updateDoc(doc(db, "video", newDocId), {
+                    await updateDoc(doc(db, "videoEn", newDocId), {
                       videoURL: videoURL,
                     });
 
@@ -285,4 +285,4 @@ const AddVideo = ({ data }) => {
     </section>
   );
 };
-export default withFirebaseCollection("course")(AddVideo);
+export default withFirebaseCollection("courseEn")(AddVideo);

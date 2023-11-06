@@ -35,8 +35,12 @@ export default function Feature({ t }) {
               className={css.firstSvg}
             />
           </div>
-          <h4 className={css.h4Prof}>{t("description.part1.header.prof")}</h4>
-          <p className={css.pProf}>{t("description.part1.header.profDesc")}</p>
+          <h4 className={css.h4Prof}>
+            {t("description.part1.header.profTwo")}
+          </h4>
+          <p className={css.pProf}>
+            {t("description.part1.header.profDescTwo")}
+          </p>
         </div>
         <div className={css.bubleWrap}>
           <div className={css.svgWrap}>
@@ -47,8 +51,12 @@ export default function Feature({ t }) {
               className={css.firstSvg}
             />
           </div>
-          <h4 className={css.h4Prof}>{t("description.part1.header.prof")}</h4>
-          <p className={css.pProf}>{t("description.part1.header.profDesc")}</p>
+          <h4 className={css.h4Prof}>
+            {t("description.part1.header.profThre")}
+          </h4>
+          <p className={css.pProf}>
+            {t("description.part1.header.profDescThre")}
+          </p>
         </div>
         <div className={css.bubleWrap}>
           <div className={css.svgWrap}>
@@ -59,8 +67,12 @@ export default function Feature({ t }) {
               className={css.firstSvg}
             />
           </div>
-          <h4 className={css.h4Prof}>{t("description.part1.header.prof")}</h4>
-          <p className={css.pProf}>{t("description.part1.header.profDesc")}</p>
+          <h4 className={css.h4Prof}>
+            {t("description.part1.header.profFour")}
+          </h4>
+          <p className={css.pProf}>
+            {t("description.part1.header.profDescFour")}
+          </p>
         </div>
         <div className={css.bubleWrap}>
           <div className={css.svgWrap}>
@@ -71,8 +83,12 @@ export default function Feature({ t }) {
               className={css.firstSvg}
             />
           </div>
-          <h4 className={css.h4Prof}>{t("description.part1.header.prof")}</h4>
-          <p className={css.pProf}>{t("description.part1.header.profDesc")}</p>
+          <h4 className={css.h4Prof}>
+            {t("description.part1.header.profFive")}
+          </h4>
+          <p className={css.pProf}>
+            {t("description.part1.header.profDescFive")}
+          </p>
         </div>
         <div className={css.bubleWrap}>
           <div className={css.svgWrap}>
@@ -83,8 +99,12 @@ export default function Feature({ t }) {
               className={css.firstSvg}
             />
           </div>
-          <h4 className={css.h4Prof}>{t("description.part1.header.prof")}</h4>
-          <p className={css.pProf}>{t("description.part1.header.profDesc")}</p>
+          <h4 className={css.h4Prof}>
+            {t("description.part1.header.profSix")}
+          </h4>
+          <p className={css.pProf}>
+            {t("description.part1.header.profDescSix")}
+          </p>
         </div>
       </div>
     </section>

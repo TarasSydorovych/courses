@@ -11,6 +11,7 @@ import {
 } from "firebase/auth";
 import { auth, googleAuthProvider } from "../../function/firebase";
 import UaVersion from "./uaVersion";
+import EnVersion from "../adminEng/enVersion";
 export default function Admin() {
   const navigate = useNavigate();
   const [adminIn, setAdminIn] = useState(false);
@@ -123,6 +124,7 @@ export default function Admin() {
 
       <div className={css.wrapCha}></div>
       {ua && <UaVersion />}
+      {en && <EnVersion />}
     </>
   );
 }

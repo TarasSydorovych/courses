@@ -71,7 +71,7 @@
 }
 .wrapLogin {
   height: 100%;
-  width: 170px;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -270,6 +270,7 @@
   align-items: center;
   justify-content: space-between;
   width: 47px;
+  margin-right: 10px;
 }
 .theLanguage {
   font-family: var(--cufredoc-font);

@@ -10,10 +10,14 @@ import Contact from "./component/contact/contact";
 import Cabinet from "./component/cabinet/cabinet";
 import Course from "./component/course/course";
 import Admin from "./component/admin/admin";
+import CourseEn from "./component/courseEn/course";
 import TheCourse from "./component/theCourse/theCourse";
+import TheCourseEn from "./component/theCourseEn/theCourse";
+import { useTranslation, Trans } from "react-i18next";
 function App() {
   const [windowDimensions, setWindowDimensions] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
   const [activeUser, setActiveUser] = useState("");
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -36,11 +40,21 @@ function App() {
       <Header setActiveUser={setActiveUser} activeUser={activeUser} />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/course" element={<Course />} />
+        {i18n.language === "ua" && (
+          <Route path="/course" element={<Course />} />
+        )}
+        {i18n.language === "en" && (
+          <Route path="/course" element={<CourseEn />} />
+        )}
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/cabinet" element={<Cabinet activeUser={activeUser} />} />
-        <Route path="/course/:id" element={<TheCourse />} />
+        {i18n.language === "ua" && (
+          <Route path="/course/:id" element={<TheCourse />} />
+        )}
+        {i18n.language === "en" && (
+          <Route path="/course/:id" element={<TheCourseEn />} />
+        )}
       </Routes>
       <Footer />
     </>
