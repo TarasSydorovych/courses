@@ -15,7 +15,7 @@ const TheCourse = ({ data }) => {
   useEffect(() => {
     const course = data.find((course) => course.uid === id);
     setSelectedCourse(course);
-  }, [data, id, selectedCourse]);
+  }, [data, id, selectedCourse, i18n.language]);
   const [scrollHeight, setScrollHeight] = useState(0);
 
   useEffect(() => {

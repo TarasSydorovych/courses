@@ -39,7 +39,7 @@ i18n
                 blockOneTitle: "Pencil Drawing Lessons",
                 blockOneDesc: "Drawing lessons for all ages",
                 buttonBlockOne: "Learn More",
-                bigAbFirstP: "Awaken the Genius in Your Child",
+                bigAbFirspP: "Awaken the Genius in Your Child",
                 pPidH:
                   "The teacher builds lessons considering the individual features of each student. Lessons are aimed at unlocking the child's potential. It is crucial for the child to be interested. We only select interesting and useful programs.",
                 whyUsTitle: "Why Us?",
@@ -50,8 +50,8 @@ i18n
                 profTwo: "Quality",
                 profDescTwo:
                   "Our video lessons feature bright images and clear sound to ensure the highest quality learning experience. Children will be amazed by the excellent content quality.",
-                profThree: "Flexible Schedule",
-                profDescThree:
+                profThre: "Flexible Schedule",
+                profDescThre:
                   "Children can learn at a time that suits them best. Our flexible learning schedule allows them to adapt their education to their daily routine.",
                 profFour: "Experienced Team",
                 profDescFour:
@@ -67,6 +67,18 @@ i18n
                 courseName: "Pencil Drawing Course",
                 courseDesc:
                   "This course will teach you various exciting drawing styles",
+                wakeH: "Wake a Genius in a Child",
+                wakeDesc:
+                  "Engaging and valuable programs, individualized approach to each student, and stimulating learning will help uncover your child's talents.",
+                butWake: "Check out our lessons",
+                firstBST: "Courses for Boys",
+                descFirstBst: "Courses for boys of any age",
+                secondBST: "Courses for Girls",
+                descSecondBst: "Courses for girls of any age",
+                threBST: "Drawing Courses",
+                descThreBst: "Drawing courses for children of any age",
+                fourBST: "Sculpting Courses",
+                descFourBst: "Sculpting courses for children of any age",
               },
               contact: {
                 howFind: "How to Find Us",
@@ -151,6 +163,21 @@ i18n
 
                 nextLes: "Next lesson",
               },
+              aboutPage: {
+                title: "Welcome to Newton's Apples",
+                description:
+                  "Newton's Apples is a fun and creative enterprise specializing in creating engaging and educational lessons for children. Our mission is to make learning interesting and accessible for young scholars. We blend science and entertainment to craft unique educational programs that foster knowledge development and inspire children to learn with passion. With 'Newton's Apples,' every day is an opportunity to discover the wonders of the world through exciting and educational adventures. Allow your child to explore the most fascinating aspects with 'Newton's Apples.'",
+                but: "Check out our lessons",
+                aboutTeacher: "Our Staff",
+                abotTitleTeacher: "Our Teachers",
+                teacherDesc:
+                  "Talented teachers who inspire and guide us to knowledge and achievements. Get to know our team!",
+                teacherFirstName: "Katerina",
+                teacherFirstSmallDesc:
+                  "Artist, graphic designer, professional in decorative art",
+                teacherFirstBidDesc:
+                  "Will paint with your child using various painting techniques. Uses sketches and ideas to create unique drawings. Easily connects with children.",
+              },
             },
             seo: {},
           },
@@ -211,6 +238,18 @@ i18n
                 courseName: "Урок малювання олівцем",
                 courseDesc:
                   "Цей урок навчить Вас використовувати багато цікавих стилів малювання",
+                wakeH: "Пробудити в дитині генія",
+                wakeDesc:
+                  "Цікаві та корисні програми, індивідуальний підхід до кожного учня та стимулююче навчання допоможуть розкрити талант Вашої дитини.",
+                butWake: "Перегляньте наші уроки",
+                firstBST: "Курс для хлопчиків",
+                descFirstBst: "Курси для хлопчиків будь-якого віку",
+                secondBST: "Курс для дівчаток",
+                descSecondBst: "Курси для дівчаток будь-якого віку",
+                threBST: "Курси малювання",
+                descThreBst: "Курси малювання для дітей будь-якого віку",
+                fourBST: "Курси ліпнини",
+                descFourBst: "Курси ліпнини для дітей будь-якого віку",
               },
               contact: {
                 howFind: "Як нас знайти",
@@ -292,6 +331,21 @@ i18n
                 addCom: "Залишити коментар",
                 send: "Відправити",
                 nextLes: "Наступний урок",
+              },
+              aboutPage: {
+                title: "Ласкаво просимо до Ньютонових яблучок",
+                description:
+                  "Ньютонові яблучка - це веселе та креативне підприємство, яке спеціалізується на створенні захоплюючих та освітніх уроків для дітей. Наша місія полягає в тому, щоб зробити навчання цікавим та доступним для маленьких вчених. Ми поєднуємо науку та розваги, створюючи унікальні навчальні програми, які сприяють розвитку знань та підталкуванню дітей до вивчення з любов'ю. З 'Ньютоновими яблучками' кожен день - це нова можливість відкривати дива навколишнього світу через захоплюючі та пізнавальні пригоди. Дозвольте вашій дитині відкрити найцікавіше з 'Ньютоновими яблучками'.",
+                but: "Переглянути наші уроки",
+                aboutTeacher: "Наш персонал",
+                abotTitleTeacher: "Наші вчителі",
+                teacherDesc:
+                  "Талановиті вчителі, які надихають та ведуть нас до знань та досягнень. Познайомтеся із нашою командою!",
+                teacherFirstName: "Катерина",
+                teacherFirstSmallDesc:
+                  " Художник, графічний дизайнер, професіонал декоративного мистецтва",
+                teacherFirstBidDesc:
+                  " Буде малювати фарбами разом з Вашою дитиною. Володіє багатьма техніками малювання. В роботі використовує ескізи і ідеї для створення індивідуальних малюнків. Легко знаходить спільну мову з дітьми",
               },
             },
             seo: {},

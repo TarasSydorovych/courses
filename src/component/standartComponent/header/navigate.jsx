@@ -10,7 +10,7 @@ export default function Navigate({ t }) {
           </Link>
         </li>
         <li className={css.navigateLisecond}>
-          <Link className={css.navigateLiLink} to="/">
+          <Link className={css.navigateLiLink} to="/about">
             {t("description.part1.header.about")}
           </Link>
         </li>

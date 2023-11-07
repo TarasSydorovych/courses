@@ -1,4 +1,5 @@
 import css from "./course.module.css";
+import paralax from "../../img/parallax-1.png";
 export default function TitleCourse({ t }) {
   return (
     <section className={css.titleWrap}>

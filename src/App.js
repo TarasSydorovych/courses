@@ -14,6 +14,7 @@ import CourseEn from "./component/courseEn/course";
 import TheCourse from "./component/theCourse/theCourse";
 import TheCourseEn from "./component/theCourseEn/theCourse";
 import { useTranslation, Trans } from "react-i18next";
+import AboutUs from "./component/aboutUs/aboutUs";
 function App() {
   const [windowDimensions, setWindowDimensions] = useState(false);
   const location = useLocation();
@@ -21,7 +22,7 @@ function App() {
   const [activeUser, setActiveUser] = useState("");
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location]);
+  }, [location, i18n.language]);
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 1100) {
@@ -55,6 +56,7 @@ function App() {
         {i18n.language === "en" && (
           <Route path="/course/:id" element={<TheCourseEn />} />
         )}
+        <Route path="/about" element={<AboutUs t={t} />} />
       </Routes>
       <Footer />
     </>

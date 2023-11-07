@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
+
+:root {
+  --standart-color: #ffdb00;
+  --secondary-color: #118bd7;
+  --red-color: #3e3092;
+  --colred-color: #f4223c;
+  --cufredoc-font: "Fredoka", sans-serif;
+  --titletex-color: #414042;
+  --ptext-color: #73757b;
+  --blocab-color: #f1f2f2;
+  --custom-font: Ubuntu;
+}
+.aboutWrap {
+  width: 100%;
+  height: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.sectionAboutBigWrap {
+  margin-top: 100px;
+  width: calc(100% - 40px);
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.firstPInBigAvo {
+  font-family: var(--cufredoc-font);
+  color: #ff7203;
+  font-size: 25px;
+  margin-bottom: 0;
+  font-weight: bolder;
+}
+.bigAbH2 {
+  font-family: var(--cufredoc-font);
+  color: #482f92;
+  font-size: 60px;
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.pNearH {
+  font-family: var(--cufredoc-font);
+  color: #7965b5;
+  font-size: 20px;
+  width: 60%;
+  text-align: center;
+}
+.blockWithPicture {
+  width: 100%;
+  height: 550px;
+  position: relative;
+  margin-top: 50px;
+}
+.pic1 {
+  position: absolute;
+  width: 580px;
+  height: 435px;
+  top: 10px;
+  right: calc(50% - 217px);
+}
+.pic5 {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 50px;
+  right: calc(65%);
+}
+.pic4 {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 50px;
+  right: calc(23%);
+}
+.pic3 {
+  position: absolute;
+  width: auto;
+  height: auto;
+
+  right: calc(55%);
+}
+.pic2 {
+  position: absolute;
+  width: auto;
+  height: auto;
+
+  right: calc(35%);
+}
+.star {
+  width: 80px;
+  height: 80px;
+  clip-path: polygon(
+    50% 0%,
+    66% 26%,
+    98% 35%,
+    76% 59%,
+    86% 91%,
+    49% 76%,
+    13% 94%,
+    26% 60%,
+    2% 35%,
+    31% 28%
+  );
+  background: #9bc800;
+  position: absolute;
+  left: 15%;
+  top: 0px;
+}
+.cir {
+  background: #c810a2;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  left: 60%;
+  top: 290px;
+}
+.svgN {
+  position: absolute;
+  left: 70%;
+  top: -95px;
+}
+
+.buttonWiew {
+  background: #ffe700;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  height: 80px;
+  border: none;
+  color: #442d79;
+  font-family: var(--cufredoc-font);
+  font-size: 35px;
+  border-radius: 10px;
+  font-weight: bold;
+  z-index: 3;
+  cursor: pointer;
+  transition: all ease-in 900;
+  margin-top: 20px;
+}
+.buttonWiew:hover {
+  background: #00cc8c;
+}
+.teacherWrap {
+  margin-top: 100px;
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #edf8ff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.waaw {
+  color: #edf8ff;
+  width: 100%;
+}
+.teacherWrapSmal {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.wavysvg {
+  position: absolute;
+  top: -100px;
+  width: 100%;
+  height: 100px;
+}
+.wavysvgBottom {
+  position: absolute;
+  bottom: -100px;
+  width: 100%;
+  height: 100px;
+}
+.wrapBlockTe {
+  width: 288px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapFlex {
+  width: 1400px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.teacher {
+  width: 288px;
+  height: 288px;
+  border-radius: 50%;
+}
+.teacherName {
+  font-family: var(--cufredoc-font);
+  color: #0098ff;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+.teacherProfesion {
+  font-family: var(--cufredoc-font);
+  color: var(--ptext-color);
+  font-size: 20px;
+  text-align: center;
+  margin-top: 0;
+}
+.teacherWillDo {
+  font-family: var(--cufredoc-font);
+  color: var(--titletex-color);
+  font-size: 20px;
+  text-align: center;
+  margin-top: 0;
+}

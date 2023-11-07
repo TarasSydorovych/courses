@@ -8,20 +8,68 @@
   --custom-font: Ubuntu;
 }
 .sliderWrap {
+  position: relative;
   width: 100%;
   height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: #5637ae;
 }
 .wrapPic {
   height: 700px;
   width: 100%;
 }
+.wrapHTex {
+  position: absolute;
+  top: 110px;
+  left: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.wakeGen {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: var(--cufredoc-font);
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  width: 600px;
+}
+.wakeP {
+  font-family: var(--cufredoc-font);
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  width: 650px;
+}
+.buttonWake {
+  background: #ffe700;
+  width: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 70px;
+  border: none;
+  color: #442d79;
+  font-family: var(--cufredoc-font);
+  font-size: 35px;
+  border-radius: 10px;
+  font-weight: bold;
+  z-index: 3;
+  cursor: pointer;
+  transition: all ease-in 900;
+  margin-top: 20px;
+}
+.buttonWake:hover {
+  background: #00cc8c;
+}
 .picInSlide {
-  width: 100%;
-  height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
 }
 .smallAboutWrap {
   width: 100%;
@@ -61,10 +109,10 @@
   display: inline-block;
 }
 .wrapBlockInfo {
-  width: calc(288px - 20px);
+  width: calc(300px - 20px);
   height: 380px;
   background: #0098ff;
-  border-radius: 10px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,7 +139,7 @@
   border: none;
   background: white;
   color: #3e3092;
-  font-family: var(--custom-font);
+  font-family: var(--cufredoc-font);
   font-size: 20px;
   cursor: pointer;
   font-weight: bold;
@@ -105,7 +153,7 @@
 }
 .wrapPicFirst {
   width: 60%;
-  height: auto;
+  height: 160px;
 }
 .newCourseWrap {
   width: calc(100%);

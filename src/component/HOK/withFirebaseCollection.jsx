@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { auth, db } from "../../function/firebase";
-
+import { useTranslation, Trans } from "react-i18next";
 const withFirebaseCollection = (collectionName) => (WrappedComponent) => {
   const WithFirebaseCollection = (props) => {
     const [data, setData] = useState([]);
-
+    const { t, i18n } = useTranslation();
     useEffect(() => {
       const fetchData = async () => {
         try {
@@ -21,7 +21,7 @@ const withFirebaseCollection = (collectionName) => (WrappedComponent) => {
       };
 
       fetchData();
-    }, [collectionName]);
+    }, [collectionName, i18n.language]);
 
     return <WrappedComponent data={data} {...props} />;
   };

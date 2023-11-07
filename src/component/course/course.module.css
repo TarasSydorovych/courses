@@ -21,6 +21,7 @@
   margin-bottom: 100px;
   display: flex;
   flex-direction: column;
+  background-color: #5637ae;
   background-size: cover;
   align-items: center;
 }
@@ -41,14 +42,15 @@
 .titleCourseH1 {
   font-family: var(--cufredoc-font);
   font-size: 50px;
-  color: var(--colred-color);
+  color: #ff7203;
   margin-bottom: 0;
 }
 .titleCourseP {
   font-family: var(--cufredoc-font);
   font-size: 25px;
   width: 90%;
-  color: var(--secondary-color);
+  color: #482f92;
+  font-weight: bold;
 }
 .smalListUK {
   padding: 0;
@@ -61,7 +63,7 @@
 .smallListLi {
   font-family: var(--cufredoc-font);
   font-size: 20px;
-  color: var(--secondary-color);
+  color: #482f92;
   margin-top: 10px;
 }
 .listCatAndProdWR {
