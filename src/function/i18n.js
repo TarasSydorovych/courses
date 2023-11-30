@@ -89,7 +89,20 @@ i18n
                 form: "Contact Form",
                 name: "Name",
                 mes: "Message",
-                buttonSend: "Send",
+                buttonSend: "Send a message",
+                titleFirst: "Contact Us",
+                titleFirstBig: "Do you have any questions?",
+                descFirst:
+                  "If you feel the need to get more detailed information about our online lessons, feel free to write to us!",
+                blockEmailUsT: "Email us",
+                blockEmailUsDesc:
+                  "Email us for general queries and partnership opportunitiesі",
+                blockPhoneUsT: "Call us",
+                blockPhoneUsDesc: "Always happy to help.",
+                blockFormT: "Send a message",
+                bloclFOrmTB: "Leave us a message",
+                blockFormDesc:
+                  "Whether you want to write a message to us or leave us a review, don’t hesitate and fill up the contact form below!",
               },
               cabinet: {
                 title: "Personal Cabinet",
@@ -177,6 +190,9 @@ i18n
                   "Artist, graphic designer, professional in decorative art",
                 teacherFirstBidDesc:
                   "Will paint with your child using various painting techniques. Uses sketches and ideas to create unique drawings. Easily connects with children.",
+                ownerTitle:
+                  "«We understand how important it is for children to grow up healthy, smart and happy. We develop programs that will be interesting and useful for the future generation»",
+                ownerDesc: "Viktoria Chepovetska",
               },
             },
             seo: {},
@@ -260,7 +276,20 @@ i18n
                 form: "Зворотній зв'язок",
                 name: "Імʼя",
                 mes: "Повідомлення",
-                buttonSend: "Відправити",
+                buttonSend: "Відправити повідомлення",
+                titleFirst: "Зв'яжіться з нами",
+                titleFirstBig: "У вас є питання?",
+                descFirst:
+                  "Якщо ви відчуваєте потребу отримати більш детальну інформацію про наші онлайн уроки, сміливо пишіть нам!",
+                blockEmailUsT: "Напишіть нам",
+                blockEmailUsDesc:
+                  "Пишіть нам електронною поштою для загальних запитів і можливостей партнерства",
+                blockPhoneUsT: "Телефонуйте нам",
+                blockPhoneUsDesc: "Завжди раді допомогти.",
+                blockFormT: "Відправити повідомлення",
+                bloclFOrmTB: "Залиште нам повідомлення",
+                blockFormDesc:
+                  "Якщо ви хочете написати нам повідомлення або залишити відгук, не зволікайте та заповніть контактну форму нижче!",
               },
               cabinet: {
                 title: "Особистий кабінет",
@@ -346,6 +375,9 @@ i18n
                   " Художник, графічний дизайнер, професіонал декоративного мистецтва",
                 teacherFirstBidDesc:
                   " Буде малювати фарбами разом з Вашою дитиною. Володіє багатьма техніками малювання. В роботі використовує ескізи і ідеї для створення індивідуальних малюнків. Легко знаходить спільну мову з дітьми",
+                ownerTitle:
+                  "«Ми розуміємо, як важливо, щоб діти росли здоровими, розумними та щасливими. Розробляємо програми, які будуть цікаві та корисні для майбутнього покоління»",
+                ownerDesc: "Вікторія Чеповецька",
               },
             },
             seo: {},

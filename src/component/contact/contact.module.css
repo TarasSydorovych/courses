@@ -10,10 +10,10 @@
   padding: 50px;
   width: calc(100% - 100px);
   height: auto;
-  background: var(--secondary-color);
+
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
 }
 .mapWrap {
   display: flex;
@@ -60,61 +60,171 @@
   color: white;
 }
 .formWrap {
-  width: auto;
+  width: 1300px;
   margin-top: 10px;
   display: flex;
   height: auto;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 50px;
 }
 .contactUs {
   font-family: var(--custom-font);
   font-size: 30px;
-  color: white;
+  color: black;
 }
 .formicInputs {
-  width: 400px;
-  height: 40px;
-  border: 1px solid white;
-  background: none;
+  width: calc(630px - 20px);
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  background: #eef8ff;
   margin-top: 30px;
   padding-left: 20px;
-  color: white;
-  font-family: var(--custom-font);
+  color: #5c489e;
+  font-family: var(--cufredoc-font);
   font-size: 20px;
 }
-.formicInputs::placeholder {
-  color: white;
-}
-.formicArea {
-  width: 400px;
-  height: 150px;
-  border: 1px solid white;
-  background: none;
+.formicInputsSec {
+  width: calc(100% - 20px);
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  background: #eef8ff;
   margin-top: 30px;
   padding-left: 20px;
+  color: #5c489e;
+  font-family: var(--cufredoc-font);
+  font-size: 20px;
+}
+.formicInputsSec::placeholder {
+  color: #5c489e;
+}
+.formicInputs::placeholder {
+  color: #5c489e;
+}
+.formicArea {
+  width: calc(100% - 20px);
+  height: 150px;
+  border: none;
+  border-radius: 10px;
+  background: #eef8ff;
+  margin-top: 30px;
   padding-top: 20px;
-  color: white;
-  font-family: var(--custom-font);
+  padding-left: 20px;
+  color: #5c489e;
+  font-family: var(--cufredoc-font);
   font-size: 20px;
 }
 .formicArea::placeholder {
-  color: white;
+  color: #5c489e;
 }
 .buttonFormicSend {
   margin-top: 30px;
-  width: 100%;
-  height: 50px;
+  width: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 70px;
   border: none;
-  background: var(--colred-color);
-  color: white;
-  font-family: var(--custom-font);
+  background: var(--standart-color);
+  color: #3c257d;
+  font-family: var(--cufredoc-font);
   font-weight: bold;
   font-size: 20px;
   transition: background 0.3s ease;
   cursor: pointer;
+  border-radius: 10px;
+  align-self: center;
 }
 .buttonFormicSend:hover {
-  background: var(--standart-color);
+  background: #ff7203;
+}
+.conWr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-top: 70px;
+}
+.firstPInBigAvo {
+  font-family: var(--cufredoc-font);
+  color: #ff7203;
+  font-size: 25px;
+  margin-bottom: 0;
+  font-weight: bolder;
+}
+.bigAbH2 {
+  font-family: var(--cufredoc-font);
+  color: #482f92;
+  font-size: 60px;
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.pNearH {
+  font-family: var(--cufredoc-font);
+  color: #7965b5;
+  font-size: 20px;
+  width: 60%;
+  text-align: center;
+}
+.wrapBlockMail {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+.emailBlock {
+  width: calc(401px - 80px);
+  height: calc(312px - 80px);
+  padding: 40px 40px 40px 40px;
+  background: var(--secondary-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 50px;
+}
+.phoneBlock {
+  width: calc(401px - 80px);
+  height: calc(312px - 80px);
+  padding: 40px 40px 40px 40px;
+  background: #c810a2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ioMdMail {
+  color: #ffe700;
+  font-size: 50px;
+}
+.mailB {
+  font-family: var(--cufredoc-font);
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.mailBDesc {
+  font-family: var(--cufredoc-font);
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+.mailHref {
+  font-family: var(--cufredoc-font);
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+.firsAdmT {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

@@ -9,7 +9,9 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import withFirebaseCollection from "../HOK/withFirebaseCollection";
+import { useNavigate } from "react-router-dom";
 const Video = ({ el, scrollHeight, t, data }) => {
+  const navigete = useNavigate();
   const [bigVideo, setBigVideo] = useState(false);
   const [productKey, setProductKey] = useState(0);
 
@@ -30,7 +32,10 @@ const Video = ({ el, scrollHeight, t, data }) => {
           alt={`${el.courseName} з ньютоновими яблучками`}
         />
       </div>
-      <div className={css.videoDescWrap} onClick={() => setBigVideo(true)}>
+      <div
+        className={css.videoDescWrap}
+        onClick={() => navigete(`/video/${el.uid}`)}
+      >
         <h2 className={css.videoName}>{el.videoName}</h2>
         <p className={css.pDescOne}>{el.description}</p>
       </div>

@@ -1,4 +1,7 @@
 import css from "./contact.module.css";
+import { IoMdMail } from "react-icons/io";
+import { AiFillPhone } from "react-icons/ai";
+
 import { useTranslation, Trans } from "react-i18next";
 import keyWord from "../../function/keyWord";
 import { useState, useRef, useEffect } from "react";
@@ -81,103 +84,130 @@ export default function Contact() {
   const isSubmitDisabled = phone.length < 10;
   return (
     <section className={css.contactWrap}>
-      <div className={css.mapWrap}>
-        <h1 className={css.h1Map}> {t("description.part1.contact.howFind")}</h1>
-        <img src={map} className={css.mapSt} alt="map" />
-      </div>
-      <div className={css.companyInfoWr}>
-        <div className={css.ukAdr}>
-          <h2 className={css.newtonH2}>
-            {t("description.part1.contact.comName")}
-          </h2>
-          <p className={css.adressWrapP}>
-            {t("description.part1.contact.ukAdress")}
-          </p>
-          <p className={css.adressWrapP}>
-            {t("description.part1.contact.phone")}: +380930004499
-          </p>
-          <p className={css.adressWrapP}>Email: mail@gmail.com</p>
+      <div className={css.conWr}>
+        <p className={css.firstPInBigAvo}>
+          {t("description.part1.contact.titleFirst")}
+        </p>
+        <h2 className={css.bigAbH2}>
+          {t("description.part1.contact.titleFirstBig")}
+        </h2>
+        <p className={css.pNearH}>
+          {" "}
+          {t("description.part1.contact.descFirst")}
+        </p>
+        <div className={css.wrapBlockMail}>
+          <div className={css.emailBlock}>
+            <IoMdMail className={css.ioMdMail} />
+            <p className={css.mailB}>
+              {t("description.part1.contact.blockEmailUsT")}
+            </p>
+            <p className={css.mailBDesc}>
+              {t("description.part1.contact.blockEmailUsDesc")}
+            </p>
+            <a
+              href="mailto:newtonapplescourse@gmail.com"
+              className={css.mailHref}
+            >
+              newtonapplescourse@gmail.com
+            </a>
+          </div>
+          <div className={css.phoneBlock}>
+            <AiFillPhone className={css.ioMdMail} />
+            <p className={css.mailB}>
+              {t("description.part1.contact.blockPhoneUsT")}
+            </p>
+            <p className={css.mailBDesc}>
+              {t("description.part1.contact.blockPhoneUsDesc")}
+            </p>
+            <a href="tel:+1234567890" className={css.mailHref}>
+              +1 000 10 87 000;
+            </a>
+            <a href="tel:+1234567890" className={css.mailHref}>
+              +1 000 10 87 000;
+            </a>
+          </div>
         </div>
-        <div className={css.ukAdr}>
-          <h2 className={css.newtonH2}>
-            {t("description.part1.contact.comName")}
-          </h2>
-          <p className={css.adressWrapP}>
-            {t("description.part1.contact.engAdress")}
-          </p>
-          <p className={css.adressWrapP}>
-            {t("description.part1.contact.phone")}: +380930004499
-          </p>
-          <p className={css.adressWrapP}>Email: mail@gmail.com</p>
-        </div>
       </div>
-      <form
-        type="submit"
-        ref={form}
-        onSubmit={(e) => {
-          if (!validFrom) {
-            e.preventDefault();
-            setClickCH(true);
-            setClickCHErr("Заповніть усі деталі");
-          } else {
-            setClickCHErr("");
-            sendEmail(form, e);
-            setName("");
-            setPhone("");
-            setEmail("");
-          }
-        }}
-        className={css.formWrap}
-      >
-        <h3 className={css.contactUs}>{t("description.part1.contact.form")}</h3>
-        {namecheck && namecheckErr && (
-          <div style={{ color: "red" }}>{namecheckErr}</div>
-        )}
-        <input
-          type="text"
-          className={css.formicInputs}
-          onChange={(e) => nameHandler(e)}
-          onBlur={(e) => blurHandle(e)}
-          name="user_name"
-          id="text"
-          required
-          value={name}
-          placeholder={t("description.part1.contact.name")}
-        />
-        {emailcheck && emailcheckErr && (
-          <div style={{ color: "red" }}>{emailcheckErr}</div>
-        )}
-        <input
-          type="text"
-          className={css.formicInputs}
-          name="user_email"
-          value={email}
-          onChange={(e) => emailHandler(e)}
-          onBlur={(e) => blurHandle(e)}
-          placeholder="Email"
-        />
-        {phonecheck && phonecheckErr && (
-          <div style={{ color: "red" }}>{phonecheckErr}</div>
-        )}
-        <input
-          className={css.formicInputs}
-          type="tel"
-          id="phone"
-          name="Phone"
-          value={phone}
-          placeholder={t("description.part1.contact.phone")}
-          onChange={(e) => namePhone(e)}
-          onBlur={(e) => blurHandle(e)}
-        />
-        <textarea
-          className={css.formicArea}
-          placeholder={t("description.part1.contact.mes")}
-          name="message"
-        />
-        <button disabled={isSubmitDisabled} className={css.buttonFormicSend}>
-          {t("description.part1.contact.buttonSend")}
-        </button>
-      </form>
+      <div className={css.conWr}>
+        <p className={css.firstPInBigAvo}>
+          {t("description.part1.contact.blockFormT")}
+        </p>
+        <h2 className={css.bigAbH2}>
+          {t("description.part1.contact.bloclFOrmTB")}
+        </h2>
+        <p className={css.pNearH}>
+          {" "}
+          {t("description.part1.contact.blockFormDesc")}
+        </p>
+        <form
+          type="submit"
+          ref={form}
+          onSubmit={(e) => {
+            if (!validFrom) {
+              e.preventDefault();
+              setClickCH(true);
+              setClickCHErr("Заповніть усі деталі");
+            } else {
+              setClickCHErr("");
+              sendEmail(form, e);
+              setName("");
+              setPhone("");
+              setEmail("");
+            }
+          }}
+          className={css.formWrap}
+        >
+          <div className={css.firsAdmT}>
+            {namecheck && namecheckErr && (
+              <div style={{ color: "red" }}>{namecheckErr}</div>
+            )}
+            <input
+              type="text"
+              className={css.formicInputs}
+              onChange={(e) => nameHandler(e)}
+              onBlur={(e) => blurHandle(e)}
+              name="user_name"
+              id="text"
+              required
+              value={name}
+              placeholder={t("description.part1.contact.name")}
+            />
+            {emailcheck && emailcheckErr && (
+              <div style={{ color: "red" }}>{emailcheckErr}</div>
+            )}
+            <input
+              type="text"
+              className={css.formicInputs}
+              name="user_email"
+              value={email}
+              onChange={(e) => emailHandler(e)}
+              onBlur={(e) => blurHandle(e)}
+              placeholder="Email"
+            />
+          </div>
+          {phonecheck && phonecheckErr && (
+            <div style={{ color: "red" }}>{phonecheckErr}</div>
+          )}
+          <input
+            className={css.formicInputsSec}
+            type="tel"
+            id="phone"
+            name="Phone"
+            value={phone}
+            placeholder={t("description.part1.contact.phone")}
+            onChange={(e) => namePhone(e)}
+            onBlur={(e) => blurHandle(e)}
+          />
+          <textarea
+            className={css.formicArea}
+            placeholder={t("description.part1.contact.mes")}
+            name="message"
+          />
+          <button disabled={isSubmitDisabled} className={css.buttonFormicSend}>
+            {t("description.part1.contact.buttonSend")}
+          </button>
+        </form>
+      </div>
     </section>
   );
 }

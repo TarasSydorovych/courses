@@ -1,9 +1,9 @@
 import withFirebaseCollection from "../HOK/withFirebaseCollection";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import css from "./theCourse.module.css";
 import CourseTitle from "./courseTitle";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import VideoWrap from "./videoWrap";
 import SecondBlock from "./secondBlock";
 import Advantage from "./advantage";

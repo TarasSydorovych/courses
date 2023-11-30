@@ -7,13 +7,19 @@ import {
   AiOutlineWhatsApp,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import logoEng from "../../../img/logoEn.webp";
 export default function Footer() {
   const { t, i18n } = useTranslation();
   return (
     <footer className={css.footerAllWrap}>
       <div className={css.wrapFooterSmall}>
         <div className={css.wrapLogo}>
-          <img src={logoUkr} alt="ньютонові яблучка" className={css.logoSt} />
+          {i18n.language === "ua" && (
+            <img src={logoUkr} alt="ньютонові яблучка" className={css.logoSt} />
+          )}
+          {i18n.language === "en" && (
+            <img src={logoEng} alt="ньютонові яблучка" className={css.logoSt} />
+          )}
           <p className={css.number}>
             <a className={css.number}>+38(093)-999-22-33</a>
           </p>

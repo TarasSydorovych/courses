@@ -1,32 +1,26 @@
-import css from "./product.module.css";
-import { useEffect, useRef, useState } from "react";
-import Popup from "reactjs-popup";
-import "reactjs-popup/dist/index.css";
+import { useParams } from "react-router-dom";
+import withFirebaseCollection from "../HOK/withFirebaseCollection";
+import css from "./video.module.css";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { db, auth } from "../../function/firebase";
 import { updateDoc, arrayUnion, doc } from "firebase/firestore";
 import { AiFillCamera } from "react-icons/ai";
-import withFirebaseCollection from "../HOK/withFirebaseCollection";
-
-const Product = ({
-  setBigVideo,
-  isOpen,
-  onClose,
-  scrollHeight,
-  val,
-  t,
-  data,
-  autor,
-  selectedUser,
-  setProductKey,
-}) => {
+const Video = ({ data }) => {
+  const { id } = useParams();
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const { t } = useTranslation();
+  useEffect(() => {
+    const course = data.find((course) => course.uid === id);
+    setSelectedCourse(course);
+    console.log(course);
+  }, [data, id]);
+  /////////////////////////////////////////////////
   const [commentar, setCommentar] = useState("");
   const [nextLes, setNextLes] = useState("");
-  const [el, setEl] = useState(val);
-  const [videoData, setVideoData] = useState(val);
-  const [pageContent, setPageContent] = useState({
-    courseName: val.courseName,
-    description: val.description,
-  });
+  const [el, setEl] = useState(selectedCourse);
+  const [videoData, setVideoData] = useState(selectedCourse);
+
   console.log("el before nextLessons:", el, nextLes);
   const nextLessons = () => {
     setEl(nextLes);
@@ -50,59 +44,26 @@ const Product = ({
     }
   };
 
-  useEffect(() => {
-    if (data) {
-      const lesson = data.find((lesson) => {
-        const lessonCounter = parseInt(lesson.counter, 10);
-        const elCounter = parseInt(el.counter, 10);
-
-        return lessonCounter === elCounter + 1;
-      });
-
-      if (lesson) {
-        // Знайдено урок, де `counter` більший за `el.counter`
-
-        setNextLes(lesson);
-      } else {
-        // Урок не знайдено
-      }
-    }
-  }, [data, el]);
-
   const contentStyle = { width: "1000px", borderRadius: "10px" };
 
   function findUserByUid(userId, autor) {
     return autor.find((user) => user.uid === userId);
   }
-
   return (
-    <Popup
-      open={isOpen}
-      onClose={onClose}
-      modal
-      nested
-      {...{
-        contentStyle,
-      }}
-    >
-      {(close) => (
-        <div className={css.modal}>
-          <button className={css.close} onClick={close}>
-            &times;
-          </button>
-
-          {el && (
-            <video className={css.videoStyleMp} controls key={el.uid}>
-              <source src={videoData.videoURL} type="video/mp4" />
-              Your browser does not support the video element.
-            </video>
-          )}
-
+    <section className={css.lessonWrapS}>
+      <div className={css.modal}>
+        {selectedCourse && (
+          <video className={css.videoStyleMp} controls key={selectedCourse.uid}>
+            <source src={selectedCourse.videoURL} type="video/mp4" />
+            Your browser does not support the video element.
+          </video>
+        )}
+        {selectedCourse && (
           <div className={css.videoTextWr}>
             <div className={css.descWrFirst}>
               <div className={css.firstP}>
-                <h1 className={css.h1CourseName}>{el.videoName}</h1>
-                <p className={css.pDesc}>{el.description}</p>
+                <h1 className={css.h1CourseName}>{selectedCourse.videoName}</h1>
+                <p className={css.pDesc}>{selectedCourse.description}</p>
               </div>
               <div className={css.firstP}>
                 <p className={css.pDesc}>
@@ -119,7 +80,7 @@ const Product = ({
                   {t("description.part1.courses.whotNeed")}
                 </h2>
                 <div className={css.whotNeedWrTo}>
-                  {el.whotNeed.map((element, index) => {
+                  {selectedCourse.whotNeed.map((element, index) => {
                     return (
                       <div key={index} className={css.wNedFi}>
                         {element}
@@ -134,9 +95,9 @@ const Product = ({
                 <h1 className={css.h1CourseName}>
                   {t("description.part1.courses.coment")}
                 </h1>
-                {el.comment.map((koment, index) => {
+                {selectedCourse.comment.map((koment, index) => {
                   if (koment !== "") {
-                    const user = findUserByUid(koment.userId, autor);
+                    const user = findUserByUid(koment.userId, "1");
                     if (user) {
                       return (
                         <div className={css.respWrap}>
@@ -164,7 +125,9 @@ const Product = ({
                   placeholder={`${t("description.part1.courses.addCom")}`}
                 ></textarea>
                 <button
-                  onClick={() => addCommentToVideo(el.uid, commentar, "1")}
+                  onClick={() =>
+                    addCommentToVideo(selectedCourse.uid, commentar, "1")
+                  }
                   className={css.buttonSend}
                 >
                   {t("description.part1.courses.send")}
@@ -182,10 +145,9 @@ const Product = ({
               </div>
             </div>
           </div>
-        </div>
-      )}
-    </Popup>
+        )}
+      </div>
+    </section>
   );
 };
-
-export default withFirebaseCollection("video")(Product);
+export default withFirebaseCollection("video")(Video);

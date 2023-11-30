@@ -8,6 +8,7 @@ import en from "../../../img/lanEng.jpg";
 import ukr from "../../../img/lanUkr.jpg";
 import { useState } from "react";
 import logoUkr from "../../../img/logoUkr.webp";
+import logoEng from "../../../img/logoEn.webp";
 import { useNavigate } from "react-router-dom";
 import { useTranslation, Trans } from "react-i18next";
 import PopUpReg from "../../popUpReg/popUpReg";
@@ -36,7 +37,12 @@ export default function HeaderTop({ activeUser }) {
         <AiOutlineInstagram className={css.iOutlineInstagram} />
         <AiOutlineWhatsApp className={css.whatApp} />
       </div>
-      <img src={logoUkr} alt="ньютонові яблучка" className={css.logoSt} />
+      {i18n.language === "ua" && (
+        <img src={logoUkr} alt="ньютонові яблучка" className={css.logoSt} />
+      )}
+      {i18n.language === "en" && (
+        <img src={logoEng} alt="ньютонові яблучка" className={css.logoSt} />
+      )}
 
       <div className={css.wrapLogin}>
         <div className={css.wrapLanguage}>

@@ -117,6 +117,17 @@ export default function AboutUs({ t }) {
           <img src={svgWaveBo} alt="Wavy SVG" className={css.wavysvgBottom} />
         </div>
       </div>
+      <div className={css.aboutOwnerWrap}>
+        <img src={teac} className={css.teacher} alt="Our teacher" />
+        <h2 className={css.ownerDesc}>
+          {" "}
+          {t("description.part1.aboutPage.ownerTitle")}
+        </h2>
+        <p className={css.ownerName}>
+          {" "}
+          {t("description.part1.aboutPage.ownerDesc")}
+        </p>
+      </div>
     </section>
   );
 }
