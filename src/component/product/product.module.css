@@ -13,14 +13,31 @@
 }
 .modal {
   width: 100%;
+  padding-top: 20px;
   max-height: 90vh; /* Встановлюємо максимальну висоту на 80% висоти екрану */
   overflow-y: auto; /* Додаємо вертикальну прокрутку, якщо контент перевищує максимальну висоту */
   display: flex;
   flex-direction: column;
+  align-items: center;
   border: none;
   border-radius: 10px;
 }
-
+.orderConfirmation {
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 40px;
+  background: var(--secondary-color);
+  color: var(--blocab-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+}
+.forJoin {
+  font-family: var(--cufredoc-font);
+  font-size: 20px;
+}
 .modal::-webkit-scrollbar {
   width: 6px;
 }

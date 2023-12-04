@@ -27,7 +27,11 @@ const AddVideo = ({ data }) => {
   const [whotNeed, setWhotNeed] = useState([""]); // Стан для зберігання масиву підкатегорій
   const [ageGroup, setAgeGroup] = useState("");
   const [description, setDescription] = useState("");
+  const [descripForArea, setDescripForArea] = useState("");
   const uid = uuidv4();
+  const [seo, setSeo] = useState("");
+  const [smallDescF, setSmallDescF] = useState("");
+  const [seoDesc, setSeoDesc] = useState("");
   const [photoFile, setPhotoFile] = useState(null);
   const [videoFile, setVideoFile] = useState(null);
   const [progresVideoSt, setProgresVideoSt] = useState(false);
@@ -60,9 +64,12 @@ const AddVideo = ({ data }) => {
         comment: [],
         like: "1",
         description: description,
+        smallDescF: smallDescF,
         ageGroup: ageGroup,
         photoURL: "", // Порожнє посилання на фото
         videoURL: "", // Порожнє посилання на відео
+        seo: seo,
+        seoDesc: seoDesc,
         createdOn: serverTimestamp(),
       });
       const newDocId = docRef.id;
@@ -174,10 +181,21 @@ const AddVideo = ({ data }) => {
     setVideoFile(file);
   };
   const descFunc = (e) => {
-    setDescription(e.target.value);
+    const encodedQuestionForE = encodeURIComponent(e.target.value);
+    setDescripForArea(e.target.value);
+    setDescription(encodedQuestionForE);
+  };
+  const smallDescFunction = (e) => {
+    setSmallDescF(e.target.value);
   };
   const lessonsCount = (e) => {
     setLesNumber(e.target.value);
+  };
+  const seoTitle = (e) => {
+    setSeo(e.target.value);
+  };
+  const seoDescription = (e) => {
+    setSeoDesc(e.target.value);
   };
   const handleSubcategoryChange = (e, index) => {
     const updatedSubcategories = [...whotNeed];
@@ -225,11 +243,31 @@ const AddVideo = ({ data }) => {
         />
       </div>
       <div className={css.inpWrap}>
+        <p className={css.nameInput}>Seo title</p>
+        <input className={css.inputInCat} value={seo} onChange={seoTitle} />
+      </div>
+      <div className={css.inpWrap}>
+        <p className={css.nameInput}>Seo description</p>
+        <input
+          className={css.inputInCat}
+          value={seoDesc}
+          onChange={seoDescription}
+        />
+      </div>
+      <div className={css.inpWrap}>
         <p className={css.nameInput}>Опис для відео</p>
         <textarea
           className={css.inputInCatText}
-          value={description}
+          value={descripForArea}
           onChange={descFunc}
+        />
+      </div>
+      <div className={css.inpWrap}>
+        <p className={css.nameInput}>Маленький опис для каталогу</p>
+        <textarea
+          className={css.inputInCatText}
+          value={smallDescF}
+          onChange={smallDescFunction}
         />
       </div>
       <div className={css.inpWrap}>

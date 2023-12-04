@@ -11,7 +11,7 @@ import AddComent from "./addComent";
 import { getStorage } from "firebase/storage";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-const Video = ({ data }) => {
+const VideoEn = ({ data }) => {
   const { id } = useParams();
   const [selectedCourse, setSelectedCourse] = useState(null);
   const { t } = useTranslation();
@@ -82,7 +82,28 @@ const Video = ({ data }) => {
       </Fragment>
     ));
   }
+  // const funcAddPhoto = async () => {
+  //   try {
+  //     const fileInput = document.createElement("input");
+  //     fileInput.type = "file";
+  //     fileInput.accept = "image/*";
+  //     fileInput.onchange = async (e) => {
+  //       const file = e.target.files[0];
+  //       if (file) {
+  //         // Викликаємо функцію для завантаження фотографії в Firebase Storage
+  //         const photoURL = await uploadPhoto(file);
 
+  //         // Оновлюємо відповідний документ користувача в Firestore
+  //         await updateUserInfo(photoURL);
+  //       }
+  //     };
+
+  //     // Викликаємо клік на створений елемент введення файлу
+  //     fileInput.click();
+  //   } catch (error) {
+  //     console.error("Помилка додавання фотографії:", error);
+  //   }
+  // };
   const funcAddPhoto = async () => {
     try {
       const fileInput = document.createElement("input");
@@ -191,4 +212,4 @@ const Video = ({ data }) => {
     </section>
   );
 };
-export default withFirebaseCollection("video")(Video);
+export default withFirebaseCollection("videoEn")(VideoEn);

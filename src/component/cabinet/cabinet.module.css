@@ -253,3 +253,65 @@
   color: #3e3092;
   cursor: pointer;
 }
+.workWrap {
+  width: 1020px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+.h1YourWork {
+  font-family: var(--custom-font);
+  color: var(--red-color);
+  font-size: 30px;
+}
+.allLesWrap {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lesWrap {
+  width: calc(100% - 20px);
+  height: auto;
+  display: flex;
+  padding: 10px 10px 10px 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.descWrap {
+  width: 40%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.linkLabel {
+  font-family: var(--custom-font);
+  color: var(--red-color);
+  font-size: 25px;
+}
+.linkVideName {
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--custom-font);
+  color: var(--secondary-color);
+}
+.potoWrap {
+  width: 50%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.imgStyle {
+  max-width: 100%;
+  height: auto;
+}

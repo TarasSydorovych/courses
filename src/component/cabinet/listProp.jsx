@@ -15,9 +15,8 @@
 import React, { useState } from "react";
 import css from "./cabinet.module.css";
 
-export default function ListProp({ t }) {
+export default function ListProp({ t, setActiveItem, activeItem }) {
   // Початкове значення активного елемента - 0 (перший елемент)
-  const [activeItem, setActiveItem] = useState(0);
 
   // Функція для зміни активного елемента при кліку
   const handleItemClick = (index) => {
@@ -44,6 +43,12 @@ export default function ListProp({ t }) {
           onClick={() => handleItemClick(2)}
         >
           {t("description.part1.cabinet.message")}
+        </li>
+        <li
+          className={`${css.listLi} ${activeItem === 3 ? css.activeItem : ""}`}
+          onClick={() => handleItemClick(3)}
+        >
+          {t("description.part1.cabinet.work")}
         </li>
       </ul>
     </section>

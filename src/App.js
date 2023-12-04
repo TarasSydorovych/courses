@@ -16,6 +16,7 @@ import TheCourseEn from "./component/theCourseEn/theCourse";
 import { useTranslation, Trans } from "react-i18next";
 import AboutUs from "./component/aboutUs/aboutUs";
 import Video from "./component/video/video";
+import VideoEn from "./component/videoEn/video";
 function App() {
   const [windowDimensions, setWindowDimensions] = useState(false);
   const location = useLocation();
@@ -51,14 +52,24 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/cabinet" element={<Cabinet activeUser={activeUser} />} />
-        {i18n.language === "ua" && (
-          <Route path="/course/:id" element={<TheCourse />} />
-        )}
+
         {i18n.language === "ua" && (
           <Route path="/video/:id" element={<Video />} />
         )}
         {i18n.language === "en" && (
-          <Route path="/course/:id" element={<TheCourseEn />} />
+          <Route path="/video/:id" element={<VideoEn />} />
+        )}
+        {i18n.language === "ua" && (
+          <Route
+            path="/course/:id"
+            element={<TheCourse activeUser={activeUser} />}
+          />
+        )}
+        {i18n.language === "en" && (
+          <Route
+            path="/course/:id"
+            element={<TheCourseEn activeUser={activeUser} />}
+          />
         )}
         <Route path="/about" element={<AboutUs t={t} />} />
       </Routes>

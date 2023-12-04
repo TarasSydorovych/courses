@@ -2,7 +2,14 @@ import { useEffect, useState } from "react";
 import withFirebaseCollection from "../HOK/withFirebaseCollection";
 import css from "./theCourse.module.css";
 import Video from "./video";
-const VideoWrap = ({ data, selectedCourse, setHowMush, scrollHeight, t }) => {
+const VideoWrap = ({
+  data,
+  selectedCourse,
+  setHowMush,
+  scrollHeight,
+  t,
+  activeUser,
+}) => {
   const [filteredVideos, setFilteredVideos] = useState([]);
 
   useEffect(() => {
@@ -20,7 +27,14 @@ const VideoWrap = ({ data, selectedCourse, setHowMush, scrollHeight, t }) => {
           <>
             {filteredVideos.map((el, index) => {
               return (
-                <Video t={t} el={el} key={index} scrollHeight={scrollHeight} />
+                <Video
+                  selectedCourse={selectedCourse}
+                  activeUser={activeUser}
+                  t={t}
+                  el={el}
+                  key={index}
+                  scrollHeight={scrollHeight}
+                />
               );
             })}
           </>

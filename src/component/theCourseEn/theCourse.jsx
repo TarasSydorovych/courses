@@ -7,7 +7,7 @@ import { useTranslation, Trans } from "react-i18next";
 import VideoWrap from "./videoWrap";
 import SecondBlock from "./secondBlock";
 import Advantage from "./advantage";
-const TheCourseEn = ({ data }) => {
+const TheCourseEn = ({ data, activeUser }) => {
   const { id } = useParams();
   const { t, i18n } = useTranslation();
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -42,6 +42,7 @@ const TheCourseEn = ({ data }) => {
           scrollHeight={scrollHeight}
           selectedCourse={selectedCourse}
           setHowMush={setHowMush}
+          activeUser={activeUser}
         />
       )}
       <Advantage t={t} />

@@ -144,6 +144,7 @@
 .videoName {
   font-family: var(--cufredoc-font);
   color: var(--titletex-color);
+  cursor: pointer;
 }
 .pDesc {
   font-family: var(--cufredoc-font);
@@ -160,6 +161,7 @@
   text-align: center;
   height: 100px;
   overflow: hidden;
+  cursor: pointer;
 }
 .yerGrWrap {
   width: auto;

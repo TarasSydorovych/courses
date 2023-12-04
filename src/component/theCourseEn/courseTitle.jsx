@@ -23,19 +23,19 @@ export default function CourseTitle({ t, selectedCourse, howMush }) {
             <img src={lesPic} className={css.iconLeson} alt="Урок малювання" />
             &nbsp;
             <p className={css.textLesonP}>
-              {howMush} &nbsp;
-              {t("description.part1.courses.lesson")}
+              {t("description.part1.courses.lesson")}&nbsp;
+              {howMush}
             </p>
           </div>
           <div className={css.listWrPic}>
             <img src={walet} className={css.iconLeson} alt="Урок малювання" />
             &nbsp;
-            <p className={css.textLesonP}>{selectedCourse.coursePrice}грн</p>
+            <p className={css.textLesonP}>{selectedCourse.coursePrice}usd</p>
           </div>
           <div className={css.listWrPic}>
             <img src={childPa} className={css.iconLeson} alt="Урок малювання" />
             &nbsp;
-            <p className={css.textLesonP}>{selectedCourse.ageGroup}р</p>
+            <p className={css.textLesonP}>{selectedCourse.ageGroup}years</p>
           </div>
         </div>
       </div>

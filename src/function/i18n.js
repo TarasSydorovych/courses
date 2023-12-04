@@ -126,6 +126,15 @@ i18n
                 phone: "Phone",
                 foto: "Photo",
                 upData: "Update Data",
+                work: "My works",
+                yourH1W: "Your work",
+                lesName: "Lesson Name",
+              },
+              modal: {
+                title:
+                  "To access the video lesson, you need to pay for the course",
+                button: "Pay",
+                cur: "usd",
               },
               courses: {
                 title: "Online Courses for Children by Newton's Apples",
@@ -137,7 +146,7 @@ i18n
                 descULFour: "Convenient Payment Methods",
                 year: "years",
                 price: "Course price",
-                lesson: "lessons",
+                lesson: "Number of lessons",
                 secondBlockTitle:
                   "Engaging in the Newton's Apples proprietary methodology, your child:",
                 secFirst: "Learn to work with various creative materials",
@@ -313,6 +322,14 @@ i18n
                 phone: "Телефон",
                 foto: "Фото",
                 upData: "Обновити данні",
+                work: "Мої роботи",
+                yourH1W: "Ваші роботи",
+                lesName: "Назва уроку",
+              },
+              modal: {
+                title: "Для перегляду відео уроку потрібно оплатити курс",
+                button: "Оплатити",
+                cur: "грн",
               },
               courses: {
                 title: "Онлайн курси для дітей від Ньютонових яблучок",
@@ -324,7 +341,7 @@ i18n
                 descULFour: "Зручні методи оплати",
                 year: "роки",
                 price: "Вартість курсу",
-                lesson: "уроків",
+                lesson: "Кількість уроків",
                 secondBlockTitle:
                   "Займаючись по авторській методиці від Ньютонових яблучок, Ваша дитина:",
                 secFirst: "Навчиться працювати з різними творчими матеріалами",
