@@ -47,7 +47,9 @@
   font-size: 25px;
   cursor: pointer;
   margin: 0;
-  width: 250px;
+  width: auto;
+  padding-left: 20px;
+  padding-right: 20px;
   height: 60px;
   border-radius: 5px;
   display: flex;
@@ -333,4 +335,50 @@
 
 .trueTableSt p {
   margin: 0;
+}
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: auto;
+}
+.infoWrapAdm {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.infWr {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 40%;
+  height: auto;
+}
+.workWrap {
+  max-width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.smallWorkWr {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pictureWork {
+  width: 80%;
+  height: auto;
+}
+.pWorkP {
+  font-size: 30px;
+  align-self: center;
+  color: black;
+  font-weight: bold;
+  margin-top: 0;
 }

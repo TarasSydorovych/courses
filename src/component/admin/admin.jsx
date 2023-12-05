@@ -12,12 +12,15 @@ import {
 import { auth, googleAuthProvider } from "../../function/firebase";
 import UaVersion from "./uaVersion";
 import EnVersion from "../adminEng/enVersion";
+import Users from "./useUsers/Users";
 export default function Admin() {
   const navigate = useNavigate();
   const [adminIn, setAdminIn] = useState(false);
   const [addAuto, setAddAuto] = useState(false);
   const [ua, setUa] = useState(false);
   const [en, setEn] = useState(false);
+  const [use, setUse] = useState(false);
+  const [promo, setPromo] = useState(false);
 
   // const signInWithGoogle = async () => {
   // 	try {
@@ -91,10 +94,26 @@ export default function Admin() {
   const changeUa = () => {
     setUa(!ua);
     setEn(false);
+    setUse(false);
+    setPromo(false);
   };
   const changeEa = () => {
     setUa(false);
     setEn(!en);
+    setUse(false);
+    setPromo(false);
+  };
+  const changeUse = () => {
+    setUa(false);
+    setEn(false);
+    setUse(!use);
+    setPromo(false);
+  };
+  const changePromo = () => {
+    setUa(false);
+    setEn(false);
+    setUse(false);
+    setPromo(!promo);
   };
 
   return (
@@ -118,6 +137,12 @@ export default function Admin() {
             <li className={css.liList} onClick={changeEa}>
               Англійська версія
             </li>
+            <li className={css.liList} onClick={changeUse}>
+              Управління користувачами
+            </li>
+            <li className={css.liList} onClick={changePromo}>
+              Управління промокодами
+            </li>
           </ul>
         </div>
       )}
@@ -125,6 +150,7 @@ export default function Admin() {
       <div className={css.wrapCha}></div>
       {ua && <UaVersion />}
       {en && <EnVersion />}
+      {use && <Users />}
     </>
   );
 }
