@@ -129,6 +129,9 @@ const Video = ({ data }) => {
         userUid,
         videoId: selectedCourse.uid,
         videoName: selectedCourse.videoName,
+        isCheked: false,
+        comment: "",
+        graduet: "",
       }),
     });
     alert("Ваша робота успішно додана");

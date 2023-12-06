@@ -13,6 +13,7 @@ import { auth, googleAuthProvider } from "../../function/firebase";
 import UaVersion from "./uaVersion";
 import EnVersion from "../adminEng/enVersion";
 import Users from "./useUsers/Users";
+import Promo from "./useUsers/promo";
 export default function Admin() {
   const navigate = useNavigate();
   const [adminIn, setAdminIn] = useState(false);
@@ -151,6 +152,7 @@ export default function Admin() {
       {ua && <UaVersion />}
       {en && <EnVersion />}
       {use && <Users />}
+      {promo && <Promo />}
     </>
   );
 }
