@@ -1,6 +1,6 @@
 import css from "./course.module.css";
 import picI from "../../img/picForNew.webp";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export default function OneCourse({ t, el }) {
   const navigate = useNavigate();
   const goToCourse = () => {
@@ -19,7 +19,9 @@ export default function OneCourse({ t, el }) {
         alt={`${el.courseName}`}
       />
       <div className={css.informBlLessWrap}>
-        <h5 className={css.courseName}>{el.courseName}</h5>
+        <Link to={`/course/${el.uid}`} className={css.courseName}>
+          {el.courseName}
+        </Link>
         <p className={css.courseDesc}>
           {t("description.part1.courses.price")}:&nbsp;{el.coursePrice}
         </p>

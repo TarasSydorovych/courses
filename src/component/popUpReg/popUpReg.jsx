@@ -102,6 +102,8 @@ export default function PopUpReg({ setPopUp, setEnter }) {
         myCourse: [],
         mySubscriptions: [],
         myMessage: [],
+        photos: [],
+        diploms: [],
         signed: "false",
         discount: "0",
         kraftic: "0",

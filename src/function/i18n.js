@@ -129,6 +129,13 @@ i18n
                 work: "My works",
                 yourH1W: "Your work",
                 lesName: "Lesson Name",
+                statusCHe: "Status check",
+                ches: "checked",
+                chesNo: "not checked",
+                star: "Rating",
+                rewi: "Teacher's review",
+                mesa: "Your messages",
+                adm: "Newton's Apple Administration",
               },
               modal: {
                 title:
@@ -184,6 +191,11 @@ i18n
                 nextLes: "Наступний урок",
 
                 nextLes: "Next lesson",
+                cate: "Categories",
+                age: "Age Group",
+                payC: "Course cost",
+                freeC: "Free",
+                notFre: "Paid",
               },
               aboutPage: {
                 title: "Welcome to Newton's Apples",
@@ -325,6 +337,13 @@ i18n
                 work: "Мої роботи",
                 yourH1W: "Ваші роботи",
                 lesName: "Назва уроку",
+                statusCHe: "Статус перевірки",
+                ches: "перевірено",
+                chesNo: "не перевірено",
+                star: "Оцінка",
+                rewi: "Відгук викладача",
+                mesa: "Ваші повідомлення",
+                adm: "Адміністрація Ньютонових яблучок",
               },
               modal: {
                 title: "Для перегляду відео уроку потрібно оплатити курс",
@@ -377,6 +396,11 @@ i18n
                 addCom: "Залишити коментар",
                 send: "Відправити",
                 nextLes: "Наступний урок",
+                cate: "Категорії",
+                age: "Вікова група",
+                payC: "Вартість курсу",
+                freeC: "Безкоштовні",
+                notFre: "Платні",
               },
               aboutPage: {
                 title: "Ласкаво просимо до Ньютонових яблучок",

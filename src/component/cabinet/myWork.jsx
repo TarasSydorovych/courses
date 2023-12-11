@@ -3,15 +3,7 @@ import withFirebaseCollection from "../HOK/withFirebaseCollection";
 import css from "./cabinet.module.css";
 import { Link } from "react-router-dom";
 
-const MyWork = ({ data, activeUser, t }) => {
-  const [userWork, setUserWork] = useState(null);
-
-  useEffect(() => {
-    if (data && activeUser) {
-      const currentUser = data.find((user) => user.uid === activeUser.uid);
-      setUserWork(currentUser); // Записуємо користувача зі знайденим UID в стан
-    }
-  }, [data, activeUser]);
+const MyWork = ({ userWork, t }) => {
   return (
     <>
       {userWork && (
@@ -34,6 +26,36 @@ const MyWork = ({ data, activeUser, t }) => {
                     >
                       {el.videoName}
                     </Link>
+
+                    <p className={css.statP}>
+                      {" "}
+                      <strong>
+                        {t("description.part1.cabinet.statusCHe")}:&nbsp;
+                      </strong>
+                      {el.isCheked === "on" && (
+                        <>{t("description.part1.cabinet.ches")}</>
+                      )}
+                      {el.isCheked !== "on" && (
+                        <>{t("description.part1.cabinet.chesNo")}</>
+                      )}
+                    </p>
+                    {el.isCheked === "on" && (
+                      <p className={css.statP}>
+                        <strong>
+                          {t("description.part1.cabinet.star")}:&nbsp;{" "}
+                        </strong>
+                        {el.graduet}
+                      </p>
+                    )}
+                    {el.isCheked === "on" && (
+                      <p className={css.statPp}>
+                        <strong>
+                          {" "}
+                          {t("description.part1.cabinet.rewi")}:&nbsp;{" "}
+                        </strong>
+                        {el.comment}
+                      </p>
+                    )}
                   </div>
                   <div className={css.potoWrap}>
                     <img
@@ -51,4 +73,4 @@ const MyWork = ({ data, activeUser, t }) => {
     </>
   );
 };
-export default withFirebaseCollection("users")(MyWork);
+export default MyWork;

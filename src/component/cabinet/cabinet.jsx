@@ -4,17 +4,35 @@ import keyWord from "../../function/keyWord";
 import FirstSection from "./firstSection";
 import ListProp from "./listProp";
 import ListOfCourse from "./listOfCourse";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MyWork from "./myWork";
-export default function Cabinet({ activeUser }) {
+import Mesages from "./mesages";
+import withFirebaseCollection from "../HOK/withFirebaseCollection";
+import ListOfCourseEn from "./ListOfCourseEn";
+const Cabinet = ({ activeUser, data }) => {
   const { t, i18n } = useTranslation();
   const [activeItem, setActiveItem] = useState(0);
+  const [userWork, setUserWork] = useState(null);
+
+  useEffect(() => {
+    if (data && activeUser) {
+      const currentUser = data.find((user) => user.uid === activeUser.uid);
+      setUserWork(currentUser); // Записуємо користувача зі знайденим UID в стан
+    }
+  }, [data, activeUser]);
   return (
     <section className={css.cabinetWrap}>
       <FirstSection t={t} activeUser={activeUser} />
       <ListProp t={t} setActiveItem={setActiveItem} activeItem={activeItem} />
-      {activeItem === 0 && <ListOfCourse t={t} />}
-      {activeItem === 3 && <MyWork t={t} activeUser={activeUser} />}
+      {activeItem === 0 && i18n.language === "ua" && (
+        <ListOfCourse t={t} userWork={userWork} />
+      )}
+      {activeItem === 0 && i18n.language === "en" && (
+        <ListOfCourseEn t={t} userWork={userWork} />
+      )}
+      {activeItem === 3 && <MyWork userWork={userWork} t={t} />}
+      {activeItem === 2 && <Mesages userWork={userWork} t={t} />}
     </section>
   );
-}
+};
+export default withFirebaseCollection("users")(Cabinet);

@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import css from "../cabiner.module.css";
 import { Link } from "react-router-dom";
-
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { updateDoc, arrayUnion, doc } from "firebase/firestore";
+import { db } from "../../../function/firebase";
+import { getStorage } from "firebase/storage";
+import Diplom from "./diploms";
 export default function CheckWork({
   data,
   handleWorkInputChange,
@@ -33,10 +37,6 @@ export default function CheckWork({
           if (el.filteredPhotos.length > 0) {
             return (
               <div className={css.userBlock} key={el.uid}>
-                <div className={css.blockUsInfo}>
-                  <p className={css.workNeed}>Учень</p>
-                  <p className={css.name}>{el.userName}</p>
-                </div>
                 <div className={css.wrapLes}>
                   {el.filteredPhotos.map((prod, index) => {
                     return (

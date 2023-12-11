@@ -2,10 +2,83 @@ import css from "../cabiner.module.css";
 import { db } from "../../../function/firebase";
 import { doc, updateDoc } from "firebase/firestore";
 import { arrayUnion, arrayRemove } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+
+import { getStorage } from "firebase/storage";
 import React, { useState } from "react";
+import Diplom from "./diploms";
 export default function UserList({ data }) {
   const [selectedUser, setSelectedUser] = useState(null);
   const [editedUser, setEditedUser] = useState(null);
+  const storage = getStorage();
+  const funcAddPhoto = async (uid) => {
+    try {
+      const fileInput = document.createElement("input");
+      fileInput.type = "file";
+      fileInput.accept = "application/pdf";
+      fileInput.onchange = async (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          try {
+            await checkPhotoSize(file);
+            // Викликаємо функцію для завантаження фотографії в Firebase Storage
+            const photoURL = await uploadPhoto(file, uid);
+
+            // Оновлюємо відповідний документ користувача в Firestore
+            await updateUserInfo(photoURL, uid);
+          } catch (error) {
+            alert(`Розмір фотографії повинен бути менше 5 МБ.`);
+          }
+        }
+      };
+
+      // Викликаємо клік на створений елемент введення файлу
+      fileInput.click();
+    } catch (error) {
+      console.error("Помилка додавання фотографії:", error);
+    }
+  };
+  const checkPhotoSize = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.onabort = () =>
+        reject(alert("Читання файлу відмінено користувачем."));
+      reader.onerror = () => reject(alert("Помилка читання файлу."));
+
+      reader.onload = () => {
+        const arrayBuffer = reader.result;
+        // Розмір у мегабайтах
+        const sizeInMB = arrayBuffer.byteLength / (1024 * 1024);
+
+        // Визначте ваш ліміт розміру в мегабайтах
+        const sizeLimitMB = 5;
+
+        if (sizeInMB > sizeLimitMB) {
+          reject();
+        } else {
+          resolve(true);
+        }
+      };
+
+      reader.readAsArrayBuffer(file);
+    });
+  };
+  const updateUserInfo = async (photoURL, uid) => {
+    const userDocRef = doc(db, "users", uid);
+    await updateDoc(userDocRef, {
+      diploms: arrayUnion({
+        diplom: photoURL,
+      }),
+    });
+    alert("Ваша робота успішно додана");
+  };
+  const uploadPhoto = async (file, uid) => {
+    const storageRef = ref(storage, `users/${uid}/diploms/${file.name}`);
+    const snapshot = await uploadBytes(storageRef, file);
+    const downloadURL = await getDownloadURL(snapshot.ref);
+    return downloadURL;
+  };
   const handleWorkSaveClick = async () => {
     if (selectedUser && editedUser) {
       await updateUserDataInFirebase(selectedUser.uid, editedUser);
@@ -52,9 +125,18 @@ export default function UserList({ data }) {
     }));
   };
 
+  // const handleMessageChange = (e, index) => {
+  //   const updatedMessages = [...editedUser.myMessage];
+  //   updatedMessages[index] = e.target.value;
+  //   setEditedUser((prev) => ({ ...prev, myMessage: updatedMessages }));
+  // };
   const handleMessageChange = (e, index) => {
     const updatedMessages = [...editedUser.myMessage];
-    updatedMessages[index] = e.target.value;
+    const updatedMessage = {
+      message: e.target.value,
+      date: new Date().toISOString(), // Додайте дату до об'єкта
+    };
+    updatedMessages[index] = updatedMessage;
     setEditedUser((prev) => ({ ...prev, myMessage: updatedMessages }));
   };
   const handleWorkInputChange = (e, field, index) => {
@@ -98,7 +180,7 @@ export default function UserList({ data }) {
               <h3>Дані користувача</h3>
               <div className={css.infoWrapAdm}>
                 <div className={css.infWr}>
-                  <p>
+                  <p className={css.wrapPData}>
                     <strong>Імʼя:</strong>{" "}
                     {editedUser ? (
                       <input
@@ -110,7 +192,7 @@ export default function UserList({ data }) {
                       selectedUser.displayName
                     )}
                   </p>
-                  <p>
+                  <p className={css.wrapPData}>
                     <strong>Email:</strong>{" "}
                     {editedUser ? (
                       <input
@@ -122,7 +204,7 @@ export default function UserList({ data }) {
                       selectedUser.email
                     )}
                   </p>
-                  <p>
+                  <p className={css.wrapPData}>
                     <strong>Телефон:</strong>{" "}
                     {editedUser ? (
                       <input
@@ -134,7 +216,7 @@ export default function UserList({ data }) {
                       selectedUser.phone
                     )}
                   </p>
-                  <p>
+                  <p className={css.wrapPData}>
                     <strong>Тарифний план:</strong>{" "}
                     {editedUser ? (
                       <input
@@ -146,7 +228,7 @@ export default function UserList({ data }) {
                       selectedUser.category
                     )}
                   </p>
-                  <p>
+                  <p className={css.wrapPData}>
                     <strong>Знижка:</strong>{" "}
                     {editedUser ? (
                       <input
@@ -158,7 +240,7 @@ export default function UserList({ data }) {
                       selectedUser.discount
                     )}
                   </p>
-                  <p>
+                  <p className={css.wrapPData}>
                     <strong>Бали:</strong>{" "}
                     {editedUser ? (
                       <input
@@ -170,41 +252,69 @@ export default function UserList({ data }) {
                       selectedUser.kraftic
                     )}
                   </p>
-                  <p>
+                  <p className={css.arrayWrap}>
                     <strong>Курси користувача:</strong>{" "}
                     {editedUser &&
                       editedUser.myCourse &&
                       editedUser.myCourse.map((course, index) => (
-                        <div key={index}>
+                        <div key={index} className={css.wrapInpArr}>
                           <input
+                            className={css.inpArr}
                             type="text"
                             value={course}
                             onChange={(e) => handleCourseChange(e, index)}
                           />
                         </div>
                       ))}
-                    <button onClick={handleNewCourse}>Додати курс</button>
+                    <button
+                      className={css.standartButSt}
+                      onClick={handleNewCourse}
+                    >
+                      Додати курс
+                    </button>
                   </p>
-                  <p>
+                  <p className={css.arrayWrap}>
                     <strong>Повідомлення:</strong>{" "}
                     {editedUser &&
                       editedUser.myMessage &&
                       editedUser.myMessage.map((message, index) => (
-                        <div key={index}>
-                          <input
+                        <div key={index} className={css.wrapInpArr}>
+                          <textarea
+                            className={css.inpArr}
                             type="text"
-                            value={message}
+                            value={message.message}
                             onChange={(e) => handleMessageChange(e, index)}
                           />
                         </div>
                       ))}
-                    <button onClick={handleNewMessage}>
+                    <button
+                      className={css.standartButSt}
+                      onClick={handleNewMessage}
+                    >
                       Додати повідомлення
                     </button>
                   </p>
                   {editedUser && (
-                    <button onClick={handleSaveClick}>Зберегти</button>
+                    <button
+                      className={css.standartButSt}
+                      onClick={handleSaveClick}
+                    >
+                      Зберегти
+                    </button>
                   )}
+                  <div className={css.blockUsInfo}>
+                    <button
+                      onClick={() => funcAddPhoto(user.uid)}
+                      className={css.addDiplov}
+                    >
+                      Додати диплом
+                    </button>
+                    <p className={css.workNeed}>Список дипломів учня</p>
+                    {user.diploms.length > 0 &&
+                      user.diploms.map((dip) => {
+                        return <Diplom key={dip} dip={dip} />;
+                      })}
+                  </div>
                 </div>
                 <div className={css.workWrap}>
                   <p className={css.pWorkP}>Роботи учня</p>
@@ -249,7 +359,7 @@ export default function UserList({ data }) {
                         />
                         <p className={css.comPd}>Змінити дані</p>
                         <button
-                          className={css.butChange}
+                          className={css.standartButSt}
                           onClick={() => handleWorkSaveClick()}
                         >
                           Змінити

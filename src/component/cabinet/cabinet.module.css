@@ -129,6 +129,13 @@
   background: var(--secondary-color);
   align-items: center;
 }
+.haveCourseWrap {
+  width: 990px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .youDont {
   font-size: 20px;
   font-family: var(--custom-font);
@@ -280,7 +287,20 @@
   padding: 10px 10px 10px 10px;
   align-items: flex-start;
   justify-content: space-between;
-  border: 1px solid var(--secondary-color);
+  box-shadow: 0 0 10px 5px rgba(233, 232, 232, 0.5);
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.mesWrap {
+  align-self: flex-start;
+  width: calc(80% - 20px);
+  height: auto;
+  display: flex;
+  padding: 10px 10px 10px 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-shadow: 0 0 10px 5px rgba(233, 232, 232, 0.5);
   border-radius: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -314,4 +334,106 @@
 .imgStyle {
   max-width: 100%;
   height: auto;
+}
+.statusCheck {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.statPp {
+  font-family: var(--custom-font);
+  width: 80%;
+  flex-shrink: 0;
+  word-wrap: break-word;
+}
+.statP {
+  font-family: var(--custom-font);
+}
+.picAdm {
+  width: 40px;
+  height: auto;
+  margin-right: 15px;
+}
+.wrapMesAndN {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.pAdm {
+  font-family: var(--custom-font);
+  font-size: 20px;
+  margin-top: 0;
+  color: var(--red-color);
+}
+.pAdmMes {
+  font-family: var(--custom-font);
+  margin-top: 0;
+}
+.date {
+  font-family: var(--custom-font);
+  color: #7e7e7e;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+.courseWrap {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.divWrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.divWrap:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.pictureWrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.wrapTextC {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+.pTitle {
+  font-family: var(--custom-font);
+  font-size: 30px;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  text-decoration: none;
+}
+.pdesc {
+  font-family: var(--custom-font);
+  font-size: 18px;
+
+  color: white;
+  width: 600px;
+  text-align: center;
+  margin-top: 10px;
 }

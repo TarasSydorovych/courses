@@ -31,6 +31,7 @@ export default function HeaderTop({ activeUser }) {
       setPopUp(!popUp);
     }
   };
+  console.log(i18n.language);
   return (
     <section className={css.headerTopWrap}>
       <div className={css.wrapSocial}>
