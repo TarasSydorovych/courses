@@ -12,7 +12,6 @@ import { db } from "../../function/firebase";
 import withFirebaseCollection from "../HOK/withFirebaseCollection";
 
 const DeleteCat = ({ data }) => {
-  console.log(data);
   const handleDeleteCategory = async (categoryId) => {
     try {
       // Видаляємо категорію за ID

@@ -37,6 +37,20 @@
 .forJoin {
   font-family: var(--cufredoc-font);
   font-size: 20px;
+  color: var(--red-color);
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.forJoinPromo {
+  font-family: var(--cufredoc-font);
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.forJoinPromoBalance {
+  font-family: var(--cufredoc-font);
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--red-color);
 }
 .modal::-webkit-scrollbar {
   width: 6px;
@@ -233,4 +247,28 @@
   font-weight: bold;
   margin-top: 0;
   cursor: pointer;
+}
+.discountWrapOrder {
+  width: 80%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.promoInput {
+  width: 60%;
+  height: 30px;
+}
+.promoButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: var(--custom-font);
+  font-weight: bolder;
+  width: 180px;
+  flex-shrink: 0;
+  height: 35px;
+  background: var(--secondary-color);
 }

@@ -41,9 +41,14 @@ const ListOfCourse = ({ data, t, pidCat, ageGroups, paymentType }) => {
     if (paymentType === "free") {
       coursesToShow = coursesToShow.filter((el) => el.coursePrice === "");
     } else if (paymentType === "paid") {
-      coursesToShow = coursesToShow.filter((el) => el.coursePrice !== "");
+      coursesToShow = coursesToShow.filter(
+        (el) => parseInt(el.coursePrice, 10) > 1
+      );
+    } else if (paymentType === "subscription") {
+      coursesToShow = coursesToShow.filter(
+        (el) => el.coursePrice === "subscription"
+      );
     }
-
     // Оновлення стану filteredData
     setFilteredData(coursesToShow);
   }, [pidCat, ageGroups, data, paymentType]);
@@ -51,7 +56,9 @@ const ListOfCourse = ({ data, t, pidCat, ageGroups, paymentType }) => {
   return (
     <section className={css.courseWrapList}>
       {filteredData.map((el, index) => {
-        return <OneCourse key={index} t={t} el={el} />;
+        return (
+          <OneCourse key={index} t={t} el={el} paymentType={paymentType} />
+        );
       })}
     </section>
   );

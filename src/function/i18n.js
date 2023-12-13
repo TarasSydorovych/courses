@@ -21,7 +21,7 @@ i18n
                 main: "Home",
                 about: "About Us",
                 course: "Courses",
-                vidguk: "Reviews",
+                vidguk: "Blog",
                 cabinet: "Account",
                 contact: "Contact",
                 aboutTit: "About Us",
@@ -79,6 +79,12 @@ i18n
                 descThreBst: "Drawing courses for children of any age",
                 fourBST: "Sculpting Courses",
                 descFourBst: "Sculpting courses for children of any age",
+                all: "All",
+                viewMore: "Show More",
+                viewNoMore: "No More Articles",
+                haveQue: "Have Questions?",
+                writeUs: "Write to us on Telegram",
+                write: "Write",
               },
               contact: {
                 howFind: "How to Find Us",
@@ -140,8 +146,15 @@ i18n
               modal: {
                 title:
                   "To access the video lesson, you need to pay for the course",
+
+                promo:
+                  "If you have a discount promo code, enter it and press Apply",
                 button: "Pay",
                 cur: "usd",
+                kra: "Your balance",
+                kraAf: "coins",
+                cn: "Apply",
+                cnM: "Use",
               },
               courses: {
                 title: "Online Courses for Children by Newton's Apples",
@@ -196,6 +209,7 @@ i18n
                 payC: "Course cost",
                 freeC: "Free",
                 notFre: "Paid",
+                subscription: "Subscription",
               },
               aboutPage: {
                 title: "Welcome to Newton's Apples",
@@ -229,7 +243,7 @@ i18n
                 main: "Головна",
                 about: "Про нас",
                 course: "Курси",
-                vidguk: "Відгуки",
+                vidguk: "Блог",
                 cabinet: "Кабінет",
                 contact: "Контакти",
                 aboutTit: "Про нас",
@@ -287,6 +301,12 @@ i18n
                 descThreBst: "Курси малювання для дітей будь-якого віку",
                 fourBST: "Курси ліпнини",
                 descFourBst: "Курси ліпнини для дітей будь-якого віку",
+                all: "Усі",
+                viewMore: "Показати ще",
+                viewNoMore: "Немає більше статей",
+                haveQue: "Є запитання?",
+                writeUs: "Напиши нам в телеграм",
+                write: "Написати",
               },
               contact: {
                 howFind: "Як нас знайти",
@@ -347,8 +367,14 @@ i18n
               },
               modal: {
                 title: "Для перегляду відео уроку потрібно оплатити курс",
+                promo:
+                  "Якщо у Вас є промоком на знажку введіть його та натисніть застосувати",
                 button: "Оплатити",
                 cur: "грн",
+                kra: "Ваш баланс",
+                kraAf: "монет",
+                cn: "Застосувати",
+                cnM: "Використати",
               },
               courses: {
                 title: "Онлайн курси для дітей від Ньютонових яблучок",
@@ -401,6 +427,7 @@ i18n
                 payC: "Вартість курсу",
                 freeC: "Безкоштовні",
                 notFre: "Платні",
+                subscription: "Підписка",
               },
               aboutPage: {
                 title: "Ласкаво просимо до Ньютонових яблучок",

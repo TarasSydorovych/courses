@@ -2,13 +2,13 @@ import css from "./contact.module.css";
 import { IoMdMail } from "react-icons/io";
 import { AiFillPhone } from "react-icons/ai";
 
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import keyWord from "../../function/keyWord";
 import { useState, useRef, useEffect } from "react";
-import map from "../../img/maps.jpeg";
+
 import sendEmail from "../../function/sendMessage";
 export default function Contact() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const form = useRef();
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");

@@ -17,6 +17,10 @@ import { useTranslation, Trans } from "react-i18next";
 import AboutUs from "./component/aboutUs/aboutUs";
 import Video from "./component/video/video";
 import VideoEn from "./component/videoEn/video";
+import Blog from "./component/blog/blog";
+import BlogPage from "./component/blogPage/blogPage";
+import BlogEn from "./component/blogEn/blog";
+import BlogPageEn from "./component/blogPageEn/blogPage";
 function App() {
   const [windowDimensions, setWindowDimensions] = useState(false);
   const location = useLocation();
@@ -52,7 +56,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/cabinet" element={<Cabinet activeUser={activeUser} />} />
-
         {i18n.language === "ua" && (
           <Route path="/video/:id" element={<Video />} />
         )}
@@ -70,6 +73,18 @@ function App() {
             path="/course/:id"
             element={<TheCourseEn activeUser={activeUser} />}
           />
+        )}
+        {i18n.language === "ua" && (
+          <Route path="/blog" element={<Blog t={t} />} />
+        )}
+        {i18n.language === "ua" && (
+          <Route path="/blog/:id" element={<BlogPage t={t} />} />
+        )}
+        {i18n.language === "en" && (
+          <Route path="/blog" element={<BlogEn t={t} />} />
+        )}
+        {i18n.language === "en" && (
+          <Route path="/blog/:id" element={<BlogPageEn t={t} />} />
         )}
         <Route path="/about" element={<AboutUs t={t} />} />
       </Routes>

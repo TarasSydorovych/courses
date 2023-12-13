@@ -58,6 +58,7 @@ const Video = ({ el, scrollHeight, t, data, activeUser, selectedCourse }) => {
       </div>
       {bigVideo && (
         <Product
+          userData={userData}
           curency={`UAH`}
           courseUid={selectedCourse.uid}
           price={selectedCourse.coursePrice}

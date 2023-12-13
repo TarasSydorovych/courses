@@ -47,7 +47,9 @@
   font-size: 25px;
   cursor: pointer;
   margin: 0;
-  width: 250px;
+  width: auto;
+  padding-left: 20px;
+  padding-right: 20px;
   height: 60px;
   border-radius: 5px;
   display: flex;
@@ -333,4 +335,213 @@
 
 .trueTableSt p {
   margin: 0;
+}
+.userDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: calc(100% - 20px);
+  padding: 0 10px 0 10px;
+  height: auto;
+  border: 1px solid black;
+}
+.infoWrapAdm {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.infWr {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 50%;
+  height: auto;
+}
+.workWrap {
+  max-width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.smallWorkWr {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--colforic-color);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.pictureWork {
+  width: 80%;
+  height: auto;
+}
+.pWorkP {
+  font-size: 30px;
+  align-self: center;
+  color: black;
+  font-weight: bold;
+  margin-top: 0;
+}
+.usersContainer {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.ulListUs {
+  width: 1000px;
+  height: auto;
+}
+.userList {
+  width: calc(100% - 20px);
+  height: auto;
+  padding: 0 10px 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.wrP {
+  width: 50%;
+}
+.wrapPromo {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrPp {
+  margin-bottom: 20px;
+  font-family: var(--custom-font);
+  font-size: 25px;
+}
+.wrapButton {
+  width: 600px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.userBlock {
+  width: calc(80% - 40px);
+  height: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px solid var(--colforic-color);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.workNeed {
+  font-family: var(--custom-font);
+  font-size: 25px;
+}
+.name {
+  font-family: var(--custom-font);
+  font-size: 20px;
+}
+.lesName {
+  font-family: var(--custom-font);
+  font-size: 20px;
+  columns: var(--colgr-color);
+  text-decoration: none;
+}
+.blockUsInfo {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+.wrapLes {
+  width: 60%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.smalLes {
+  padding: 10px 10px 10px 10px;
+  width: calc(100% - 20px);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--colred-color);
+  margin-bottom: 20px;
+}
+.descForLWr {
+  display: flex;
+  align-items: center;
+}
+.imageWork {
+  width: 100%;
+  height: auto;
+}
+.addDiplov {
+  width: 200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 30px;
+  border: none;
+  background: var(--colforic-color);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.wrapPData {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.arrayWrap {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.wrapInpArr {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inpArr {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.standartButSt {
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 30px;
+  font-family: var(--custom-font);
+  font-weight: bold;
+  border: none;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+.diplomWrap {
+  width: 100%;
+}
+.wrapDiplomAll {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
 }

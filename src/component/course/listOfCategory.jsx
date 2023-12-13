@@ -158,6 +158,18 @@ const ListOfCategory = ({
               {t("description.part1.courses.notFre")}
             </label>
           </li>
+          <li className={css.liCheck}>
+            <input
+              className={css.checkBo}
+              type="checkbox"
+              id="subscriptionPaymentType"
+              checked={paymentType === "subscription"}
+              onChange={() => handlePaymentTypeChange("subscription")}
+            />
+            <label className={css.label} htmlFor="subscriptionPaymentType">
+              {t("description.part1.courses.subscription")}
+            </label>
+          </li>
         </ul>
       </ul>
     </section>
