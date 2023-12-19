@@ -9,7 +9,9 @@ import MyWork from "./myWork";
 import Mesages from "./mesages";
 import withFirebaseCollection from "../HOK/withFirebaseCollection";
 import ListOfCourseEn from "./ListOfCourseEn";
-const Cabinet = ({ activeUser, data }) => {
+import Header from "../standartComponent/header/header";
+import Refs from "./refs";
+const Cabinet = ({ data, setActiveUser, activeUser }) => {
   const { t, i18n } = useTranslation();
   const [activeItem, setActiveItem] = useState(0);
   const [userWork, setUserWork] = useState(null);
@@ -21,18 +23,24 @@ const Cabinet = ({ activeUser, data }) => {
     }
   }, [data, activeUser]);
   return (
-    <section className={css.cabinetWrap}>
-      <FirstSection t={t} activeUser={activeUser} />
-      <ListProp t={t} setActiveItem={setActiveItem} activeItem={activeItem} />
-      {activeItem === 0 && i18n.language === "ua" && (
-        <ListOfCourse t={t} userWork={userWork} />
-      )}
-      {activeItem === 0 && i18n.language === "en" && (
-        <ListOfCourseEn t={t} userWork={userWork} />
-      )}
-      {activeItem === 3 && <MyWork userWork={userWork} t={t} />}
-      {activeItem === 2 && <Mesages userWork={userWork} t={t} />}
-    </section>
+    <>
+      <Header setActiveUser={setActiveUser} activeUser={activeUser} />
+      <section className={css.cabinetWrap}>
+        <FirstSection t={t} activeUser={activeUser} />
+        <ListProp t={t} setActiveItem={setActiveItem} activeItem={activeItem} />
+        {activeItem === 0 && i18n.language === "ua" && (
+          <ListOfCourse t={t} userWork={userWork} />
+        )}
+        {activeItem === 0 && i18n.language === "en" && (
+          <ListOfCourseEn t={t} userWork={userWork} />
+        )}
+        {activeItem === 3 && <MyWork userWork={userWork} t={t} />}
+        {activeItem === 2 && <Mesages userWork={userWork} t={t} />}
+        {activeItem === 4 && (
+          <Refs userWork={userWork} t={t} uid={activeUser.uid} />
+        )}
+      </section>
+    </>
   );
 };
 export default withFirebaseCollection("users")(Cabinet);

@@ -13,6 +13,7 @@ import {
 import { auth, googleAuthProvider } from "../../../function/firebase";
 export default function Header({ setActiveUser, activeUser }) {
   const { t, i18n } = useTranslation();
+  const [popUp, setPopUp] = useState(false);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (authUser) => {
       if (authUser) {
@@ -29,8 +30,18 @@ export default function Header({ setActiveUser, activeUser }) {
   }, [auth]);
   return (
     <header className={css.headerFullWrap}>
-      <HeaderTop t={t} activeUser={activeUser} />
-      <HeaderBottom t={t} />
+      <HeaderTop
+        setPopUp={setPopUp}
+        popUp={popUp}
+        t={t}
+        activeUser={activeUser}
+      />
+      <HeaderBottom
+        setPopUp={setPopUp}
+        popUp={popUp}
+        activeUser={activeUser}
+        t={t}
+      />
     </header>
   );
 }

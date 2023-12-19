@@ -7,8 +7,9 @@ import NewCourse from "./newCourse";
 import WhyChouseUs from "./whyChoseUs";
 import BigAbout from "./bigAbout";
 import Feature from "./feature";
-import { useEffect } from "react";
-export default function Main() {
+import Header from "../standartComponent/header/header";
+
+export default function Main({ setActiveUser, activeUser }) {
   const { t, i18n } = useTranslation();
   keyWord(
     `${t("description.seo.contact.title")}`,
@@ -20,6 +21,7 @@ export default function Main() {
 
   return (
     <>
+      <Header setActiveUser={setActiveUser} activeUser={activeUser} />
       <Slider t={t} />
       <SmallAbout t={t} />
       <BigAbout t={t} />

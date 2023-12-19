@@ -4,20 +4,33 @@ import {
   AiOutlineUser,
   AiOutlineWhatsApp,
 } from "react-icons/ai";
+
+import { useLocation, useParams } from "react-router-dom";
+
 import en from "../../../img/lanEng.jpg";
 import ukr from "../../../img/lanUkr.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logoUkr from "../../../img/logoUkr.webp";
 import logoEng from "../../../img/logoEn.webp";
 import { useNavigate } from "react-router-dom";
 import { useTranslation, Trans } from "react-i18next";
 import PopUpReg from "../../popUpReg/popUpReg";
 import PopUpEnter from "../../popUpReg/popUpEnter";
-export default function HeaderTop({ activeUser }) {
+import withFirebaseCollection from "../../HOK/withFirebaseCollection";
+
+const HeaderTop = ({ activeUser, data, setPopUp, popUp }) => {
   const navigate = useNavigate();
-  const [popUp, setPopUp] = useState(false);
+  const params = useParams();
+  const location = useLocation();
+  const [refUse, setRefUse] = useState(null);
+  const [referId, setReferId] = useState("");
+
   const { t, i18n } = useTranslation();
   const [enter, setEnter] = useState(false);
+  const referralString = localStorage.getItem("referral");
+
+  // Перетворити рядок JSON у об'єкт
+  const referral = referralString ? JSON.parse(referralString) : null;
   const cahangeUkr = () => {
     i18n.changeLanguage("ua");
   };
@@ -31,7 +44,40 @@ export default function HeaderTop({ activeUser }) {
       setPopUp(!popUp);
     }
   };
-  console.log(i18n.language);
+  useEffect(() => {
+    if (location.pathname.startsWith("/referral/")) {
+      // Перевірка, чи є значення "referral" вже в локальному сховищі
+      const existingReferral = localStorage.getItem("referral");
+      if (!existingReferral) {
+        if (data.length > 0) {
+          // Перевірка, чи params.id існує в масиві data
+          const isPromoCodeValid = data.some((item) => item.uid === params.id);
+          if (isPromoCodeValid) {
+            setPopUp(true);
+            localStorage.setItem(
+              "referral",
+              JSON.stringify({
+                uid: params.id,
+                isActive: false,
+              })
+            );
+            setReferId(params.id);
+            setRefUse(isPromoCodeValid);
+            // Тут ви можете робити щось зі значенням "referral"
+          } else {
+            alert(`${t("description.part1.header.prom")}`);
+          }
+        }
+      } else {
+        console.log(
+          "Referral already exists in localStorage:",
+          existingReferral
+        );
+      }
+    } else {
+      console.log("Not a referral path");
+    }
+  }, [data]);
   return (
     <section className={css.headerTopWrap}>
       <div className={css.wrapSocial}>
@@ -63,8 +109,17 @@ export default function HeaderTop({ activeUser }) {
           <AiOutlineUser className={css.iOutlineUser} />
         </div>
       </div>
-      {popUp && <PopUpReg setPopUp={setPopUp} setEnter={setEnter} />}
+      {popUp && (
+        <PopUpReg
+          refUse={refUse}
+          referId={referId}
+          setPopUp={setPopUp}
+          setEnter={setEnter}
+          data={data}
+        />
+      )}
       {enter && <PopUpEnter setPopUp={setPopUp} setEnter={setEnter} />}
     </section>
   );
-}
+};
+export default withFirebaseCollection("users")(HeaderTop);

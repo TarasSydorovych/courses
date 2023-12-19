@@ -10,8 +10,9 @@ import { AiFillCamera } from "react-icons/ai";
 import AddComent from "./addComent";
 import { getStorage } from "firebase/storage";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import Header from "../standartComponent/header/header";
 
-const Video = ({ data }) => {
+const Video = ({ data, setActiveUser, activeUser }) => {
   const { id } = useParams();
   const [selectedCourse, setSelectedCourse] = useState(null);
   const { t } = useTranslation();
@@ -137,61 +138,70 @@ const Video = ({ data }) => {
     alert("Ваша робота успішно додана");
   };
   return (
-    <section className={css.lessonWrapS}>
-      <div className={css.modal}>
-        {selectedCourse && (
-          <video className={css.videoStyleMp} controls key={selectedCourse.uid}>
-            <source src={selectedCourse.videoURL} type="video/mp4" />
-            Your browser does not support the video element.
-          </video>
-        )}
-        {selectedCourse && (
-          <div className={css.videoTextWr}>
-            <div className={css.descWrFirst}>
-              <div className={css.firstP}>
-                <h1 className={css.h1CourseName}>{selectedCourse.videoName}</h1>
-                <p className={css.pDesc}>{paragraphs}</p>
-              </div>
-              <div className={css.firstP}>
-                <p className={css.pDesc}>
-                  {t("description.part1.courses.smalFotoDesc")}
-                </p>
-                <div className={css.uploadFoto} onClick={funcAddPhoto}>
-                  <AiFillCamera className={css.aiFillCamera} />
+    <>
+      <Header setActiveUser={setActiveUser} activeUser={activeUser} />
+      <section className={css.lessonWrapS}>
+        <div className={css.modal}>
+          {selectedCourse && (
+            <video
+              className={css.videoStyleMp}
+              controls
+              key={selectedCourse.uid}
+            >
+              <source src={selectedCourse.videoURL} type="video/mp4" />
+              Your browser does not support the video element.
+            </video>
+          )}
+          {selectedCourse && (
+            <div className={css.videoTextWr}>
+              <div className={css.descWrFirst}>
+                <div className={css.firstP}>
+                  <h1 className={css.h1CourseName}>
+                    {selectedCourse.videoName}
+                  </h1>
+                  <p className={css.pDesc}>{paragraphs}</p>
+                </div>
+                <div className={css.firstP}>
+                  <p className={css.pDesc}>
+                    {t("description.part1.courses.smalFotoDesc")}
+                  </p>
+                  <div className={css.uploadFoto} onClick={funcAddPhoto}>
+                    <AiFillCamera className={css.aiFillCamera} />
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className={css.descWrFirst}>
-              <div className={css.firstP}>
-                <h2 className={css.h1CourseName}>
-                  {t("description.part1.courses.whotNeed")}
-                </h2>
-                <div className={css.whotNeedWrTo}>
-                  {selectedCourse.whotNeed.map((element, index) => {
-                    return (
-                      <div key={index} className={css.wNedFi}>
-                        {element}
-                      </div>
-                    );
-                  })}
+              <div className={css.descWrFirst}>
+                <div className={css.firstP}>
+                  <h2 className={css.h1CourseName}>
+                    {t("description.part1.courses.whotNeed")}
+                  </h2>
+                  <div className={css.whotNeedWrTo}>
+                    {selectedCourse.whotNeed.map((element, index) => {
+                      return (
+                        <div key={index} className={css.wNedFi}>
+                          {element}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
+              <AddComent
+                t={t}
+                selectedCourse={selectedCourse}
+                commentar={commentar}
+                setCommentar={setCommentar}
+                addCommentToVideo={addCommentToVideo}
+                nextLes={nextLes}
+                dataProd={data}
+                setNextLes={setNextLes}
+                setUserUid={setUserUid}
+              />
             </div>
-            <AddComent
-              t={t}
-              selectedCourse={selectedCourse}
-              commentar={commentar}
-              setCommentar={setCommentar}
-              addCommentToVideo={addCommentToVideo}
-              nextLes={nextLes}
-              dataProd={data}
-              setNextLes={setNextLes}
-              setUserUid={setUserUid}
-            />
-          </div>
-        )}
-      </div>
-    </section>
+          )}
+        </div>
+      </section>
+    </>
   );
 };
 export default withFirebaseCollection("video")(Video);

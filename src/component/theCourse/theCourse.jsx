@@ -7,7 +7,8 @@ import { useTranslation } from "react-i18next";
 import VideoWrap from "./videoWrap";
 import SecondBlock from "./secondBlock";
 import Advantage from "./advantage";
-const TheCourse = ({ data, activeUser }) => {
+import Header from "../standartComponent/header/header";
+const TheCourse = ({ data, setActiveUser, activeUser }) => {
   const { id } = useParams();
   const { t, i18n } = useTranslation();
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -31,22 +32,29 @@ const TheCourse = ({ data, activeUser }) => {
     };
   }, []);
   return (
-    <section className={css.theCourseWrapAll}>
-      {selectedCourse && (
-        <CourseTitle t={t} selectedCourse={selectedCourse} howMush={howMush} />
-      )}
-      <SecondBlock t={t} />
-      {selectedCourse && (
-        <VideoWrap
-          t={t}
-          scrollHeight={scrollHeight}
-          selectedCourse={selectedCourse}
-          setHowMush={setHowMush}
-          activeUser={activeUser}
-        />
-      )}
-      <Advantage t={t} />
-    </section>
+    <>
+      <Header setActiveUser={setActiveUser} activeUser={activeUser} />
+      <section className={css.theCourseWrapAll}>
+        {selectedCourse && (
+          <CourseTitle
+            t={t}
+            selectedCourse={selectedCourse}
+            howMush={howMush}
+          />
+        )}
+        <SecondBlock t={t} />
+        {selectedCourse && (
+          <VideoWrap
+            t={t}
+            scrollHeight={scrollHeight}
+            selectedCourse={selectedCourse}
+            setHowMush={setHowMush}
+            activeUser={activeUser}
+          />
+        )}
+        <Advantage t={t} />
+      </section>
+    </>
   );
 };
 export default withFirebaseCollection("course")(TheCourse);

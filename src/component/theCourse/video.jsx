@@ -53,7 +53,7 @@ const Video = ({ el, scrollHeight, t, data, activeUser, selectedCourse }) => {
       userData &&
       selectedCourse.coursePrice === "subscription" &&
       userData.mySubscriptions.length > 0 &&
-      userData.mySubscriptions[0] === "subscription"
+      userData.mySubscriptions[0].sub === "subscription"
     ) {
       navigete(`/video/${el.uid}`);
     } else {

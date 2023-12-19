@@ -142,6 +142,9 @@ i18n
                 rewi: "Teacher's review",
                 mesa: "Your messages",
                 adm: "Newton's Apple Administration",
+                ref: "Referral System",
+
+                refLink: "Your referral link",
               },
               modal: {
                 title:
@@ -319,6 +322,7 @@ i18n
                 haveQue: "Є запитання?",
                 writeUs: "Напиши нам в телеграм",
                 write: "Написати",
+                prom: "Реферальне посилання не існує",
               },
               contact: {
                 howFind: "Як нас знайти",
@@ -376,6 +380,8 @@ i18n
                 rewi: "Відгук викладача",
                 mesa: "Ваші повідомлення",
                 adm: "Адміністрація Ньютонових яблучок",
+                ref: "Реферальна система",
+                refLink: "Ваше реферальне посилання",
               },
               modal: {
                 title: "Для перегляду відео уроку потрібно оплатити курс",

@@ -3,7 +3,7 @@ import { useTranslation, Trans } from "react-i18next";
 import { AiOutlineClose } from "react-icons/ai";
 import newtonUkr from "../../img/logoUkr.webp";
 import { useEffect, useState } from "react";
-import { doc, setDoc, getDoc } from "firebase/firestore";
+import { doc, setDoc, getDoc, updateDoc } from "firebase/firestore";
 import {
   auth,
   db,
@@ -23,15 +23,19 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import PopUpEnter from "./popUpEnter";
-export default function PopUpReg({ setPopUp, setEnter }) {
+import withFirebaseCollection from "../HOK/withFirebaseCollection";
+const PopUpReg = ({ setPopUp, setEnter, referId, refUse, data }) => {
   const { t, i18n } = useTranslation();
-
+  const [referUser, setReferUser] = useState(null);
+  const referralString = localStorage.getItem("referral");
+  const referral = referralString ? JSON.parse(referralString) : null;
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [phonecheck, setPhonecheck] = useState(false);
   const [email, setEmail] = useState("");
   const [emailcheck, setEmailcheck] = useState(false);
   const [namecheck, setNamecheck] = useState(false);
+
   const openEnter = () => {
     setPopUp(false);
     setEnter(true);
@@ -39,6 +43,15 @@ export default function PopUpReg({ setPopUp, setEnter }) {
   const closePopUp = () => {
     setPopUp(false);
   };
+  useEffect(() => {
+    // Знайдіть користувача з uid === referId в масиві data
+    const foundUser = data.find((user) => user.uid === referId);
+
+    // Якщо користувач знайдений, оновіть стан
+    if (foundUser) {
+      setReferUser(foundUser);
+    }
+  }, [referId, data]);
   const [namecheckErr, setNamecheckErr] = useState(
     `${t("description.part1.form.warningSeconPhone")}`
   );
@@ -89,28 +102,63 @@ export default function PopUpReg({ setPopUp, setEnter }) {
   };
   const signUp = async (e) => {
     e.preventDefault();
+    if (referral && !referral.isActive) {
+      try {
+        const res = await createUserWithEmailAndPassword(auth, email, phone);
 
-    try {
-      const res = await createUserWithEmailAndPassword(auth, email, phone);
+        await setDoc(doc(db, "users", res.user.uid), {
+          uid: res.user.uid,
+          displayName: name,
+          email: res.user.email,
+          photo: res.user.photoURL,
+          category: "неоплачений",
+          myCourse: [],
+          mySubscriptions: [],
+          myMessage: [],
+          photos: [],
+          diploms: [],
+          signed: "false",
+          discount: "0",
+          kraftic: "10",
+        });
+        const updatedKraftic = Number(referUser.kraftic) + 10;
+        await updateDoc(doc(db, "users", referId), {
+          kraftic: updatedKraftic.toString(), // Зберігати кількість у форматі строки
+        });
+        localStorage.setItem(
+          "referral",
+          JSON.stringify({
+            uid: referId,
+            isActive: true,
+          })
+        );
+        setPopUp(false);
+      } catch (error) {
+        alert("The user with this login is not registered", error);
+      }
+    } else {
+      try {
+        const res = await createUserWithEmailAndPassword(auth, email, phone);
 
-      await setDoc(doc(db, "users", res.user.uid), {
-        uid: res.user.uid,
-        displayName: name,
-        email: res.user.email,
-        photo: res.user.photoURL,
-        category: "неоплачений",
-        myCourse: [],
-        mySubscriptions: [],
-        myMessage: [],
-        photos: [],
-        diploms: [],
-        signed: "false",
-        discount: "0",
-        kraftic: "0",
-      });
-      setPopUp(false);
-    } catch (error) {
-      alert("The user with this login is not registered", error);
+        await setDoc(doc(db, "users", res.user.uid), {
+          uid: res.user.uid,
+          displayName: name,
+          email: res.user.email,
+          photo: res.user.photoURL,
+          category: "неоплачений",
+          myCourse: [],
+          mySubscriptions: [],
+          myMessage: [],
+          photos: [],
+          diploms: [],
+          signed: "false",
+          discount: "0",
+          kraftic: "0",
+        });
+        setPopUp(false);
+      } catch (error) {
+        alert("The user with this login is not registered", error);
+      }
     }
   };
   const singInWithGoogle = async (e) => {
@@ -206,4 +254,5 @@ export default function PopUpReg({ setPopUp, setEnter }) {
       </div>
     </section>
   );
-}
+};
+export default PopUpReg;

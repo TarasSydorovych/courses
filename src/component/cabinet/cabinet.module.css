@@ -3,7 +3,7 @@
   --secondary-color: #118bd7;
   --red-color: #3e3092;
   --colred-color: #f4223c;
-
+  --cufredoc-font: "Fredoka", sans-serif;
   --custom-font: Ubuntu;
 }
 .cabinetWrap {
@@ -436,4 +436,9 @@
   width: 600px;
   text-align: center;
   margin-top: 10px;
+}
+.refLinkP {
+  color: white;
+  font-family: var(--cufredoc-font);
+  font-size: 18px;
 }

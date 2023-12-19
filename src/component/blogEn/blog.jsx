@@ -5,7 +5,8 @@ import Article from "./article";
 
 import css from "./blog.module.css";
 import ListCat from "./listCat";
-const BlogEn = ({ data }) => {
+import Header from "../standartComponent/header/header";
+const BlogEn = ({ data, setActiveUser, activeUser }) => {
   const [category, setCategory] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [visibleArticles, setVisibleArticles] = useState(2);
@@ -22,6 +23,7 @@ const BlogEn = ({ data }) => {
 
   return (
     <>
+      <Header setActiveUser={setActiveUser} activeUser={activeUser} />
       <section className={css.blogWrap}>
         <div className={css.titleWrapBlog}>
           <h1 className={css.blogH1}>{t("description.part1.header.vidguk")}</h1>

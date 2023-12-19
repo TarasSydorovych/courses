@@ -14,7 +14,7 @@ import UaVersion from "./uaVersion";
 import EnVersion from "../adminEng/enVersion";
 import Users from "./useUsers/Users";
 import Promo from "./useUsers/promo";
-export default function Admin() {
+export default function Admin({ setActiveUser, activeUser }) {
   const navigate = useNavigate();
   const [adminIn, setAdminIn] = useState(false);
   const [addAuto, setAddAuto] = useState(false);
@@ -119,6 +119,7 @@ export default function Admin() {
 
   return (
     <>
+      <Header setActiveUser={setActiveUser} activeUser={activeUser} />
       <div className={css.wrapButtonIn}>
         <button className={css.buttonLog} onClick={signInWithGoogle}>
           Авторизуйтесь

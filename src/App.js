@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Header from "./component/standartComponent/header/header";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import keyWord from "./function/keyWord";
 import Main from "./component/mainPage/main";
@@ -26,6 +26,7 @@ function App() {
   const location = useLocation();
   const { t, i18n } = useTranslation();
   const [activeUser, setActiveUser] = useState("");
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location, i18n.language]);
@@ -44,49 +45,149 @@ function App() {
 
   return (
     <>
-      <Header setActiveUser={setActiveUser} activeUser={activeUser} />
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route
+          path="/"
+          element={
+            <Main setActiveUser={setActiveUser} activeUser={activeUser} />
+          }
+        />
+        <Route
+          path="/referral/:id"
+          element={
+            <Main setActiveUser={setActiveUser} activeUser={activeUser} />
+          }
+        />
         {i18n.language === "ua" && (
-          <Route path="/course" element={<Course />} />
+          <Route
+            path="/course"
+            element={
+              <Course setActiveUser={setActiveUser} activeUser={activeUser} />
+            }
+          />
         )}
         {i18n.language === "en" && (
-          <Route path="/course" element={<CourseEn />} />
+          <Route
+            path="/course"
+            element={
+              <CourseEn setActiveUser={setActiveUser} activeUser={activeUser} />
+            }
+          />
         )}
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/cabinet" element={<Cabinet activeUser={activeUser} />} />
+        <Route
+          path="/contact"
+          element={
+            <Contact setActiveUser={setActiveUser} activeUser={activeUser} />
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <Admin setActiveUser={setActiveUser} activeUser={activeUser} />
+          }
+        />
+        <Route
+          path="/cabinet"
+          element={
+            <Cabinet setActiveUser={setActiveUser} activeUser={activeUser} />
+          }
+        />
         {i18n.language === "ua" && (
-          <Route path="/video/:id" element={<Video />} />
+          <Route
+            path="/video/:id"
+            element={
+              <Video setActiveUser={setActiveUser} activeUser={activeUser} />
+            }
+          />
         )}
         {i18n.language === "en" && (
-          <Route path="/video/:id" element={<VideoEn />} />
+          <Route
+            path="/video/:id"
+            element={
+              <VideoEn setActiveUser={setActiveUser} activeUser={activeUser} />
+            }
+          />
         )}
         {i18n.language === "ua" && (
           <Route
             path="/course/:id"
-            element={<TheCourse activeUser={activeUser} />}
+            element={
+              <TheCourse
+                setActiveUser={setActiveUser}
+                activeUser={activeUser}
+              />
+            }
           />
         )}
         {i18n.language === "en" && (
           <Route
             path="/course/:id"
-            element={<TheCourseEn activeUser={activeUser} />}
+            element={
+              <TheCourseEn
+                setActiveUser={setActiveUser}
+                activeUser={activeUser}
+              />
+            }
           />
         )}
         {i18n.language === "ua" && (
-          <Route path="/blog" element={<Blog t={t} />} />
+          <Route
+            path="/blog"
+            element={
+              <Blog
+                t={t}
+                setActiveUser={setActiveUser}
+                activeUser={activeUser}
+              />
+            }
+          />
         )}
         {i18n.language === "ua" && (
-          <Route path="/blog/:id" element={<BlogPage t={t} />} />
+          <Route
+            path="/blog/:id"
+            element={
+              <BlogPage
+                t={t}
+                setActiveUser={setActiveUser}
+                activeUser={activeUser}
+              />
+            }
+          />
         )}
         {i18n.language === "en" && (
-          <Route path="/blog" element={<BlogEn t={t} />} />
+          <Route
+            path="/blog"
+            element={
+              <BlogEn
+                t={t}
+                setActiveUser={setActiveUser}
+                activeUser={activeUser}
+              />
+            }
+          />
         )}
         {i18n.language === "en" && (
-          <Route path="/blog/:id" element={<BlogPageEn t={t} />} />
+          <Route
+            path="/blog/:id"
+            element={
+              <BlogPageEn
+                t={t}
+                setActiveUser={setActiveUser}
+                activeUser={activeUser}
+              />
+            }
+          />
         )}
-        <Route path="/about" element={<AboutUs t={t} />} />
+        <Route
+          path="/about"
+          element={
+            <AboutUs
+              t={t}
+              setActiveUser={setActiveUser}
+              activeUser={activeUser}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </>

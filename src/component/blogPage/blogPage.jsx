@@ -8,8 +8,9 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { BsFillPencilFill, BsFillPersonFill } from "react-icons/bs";
 import TwoBlock from "./twoBlock";
 import ThreBlock from "./threBlock";
+import Header from "../standartComponent/header/header";
 
-const BlogPage = ({ data }) => {
+const BlogPage = ({ data, setActiveUser, activeUser }) => {
   let params = useParams();
   const [curProd, setCurProd] = useState({});
   const [haveProd, setHaveProd] = useState(false);
@@ -40,6 +41,7 @@ const BlogPage = ({ data }) => {
   }
   return (
     <>
+      <Header setActiveUser={setActiveUser} activeUser={activeUser} />
       {haveProd && (
         <section className={css.blagWrap}>
           <div className={css.titleWrapBlog}>

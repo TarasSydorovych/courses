@@ -1,6 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import css from "./header.module.css";
-export default function Navigate({ t }) {
+export default function Navigate({ t, activeUser, setPopUp, popUp }) {
+  const navigate = useNavigate();
+  const goToCab = () => {
+    if (activeUser) {
+      navigate("/cabinet");
+    } else {
+      setPopUp(true);
+    }
+  };
   return (
     <nav className={css.navigateL}>
       <ul className={css.navigateUl}>
@@ -26,11 +34,11 @@ export default function Navigate({ t }) {
           </li>
         </Link>
 
-        <Link className={css.navigateLiLink} to="/cabinet">
+        <p className={css.navigateLiLink} onClick={goToCab}>
           <li className={css.navigateLifive}>
             {t("description.part1.header.cabinet")}
           </li>
-        </Link>
+        </p>
         <Link className={css.navigateLiLink} to="/contact">
           <li className={css.navigateLisix}>
             {t("description.part1.header.contact")}

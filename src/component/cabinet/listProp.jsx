@@ -50,6 +50,12 @@ export default function ListProp({ t, setActiveItem, activeItem }) {
         >
           {t("description.part1.cabinet.work")}
         </li>
+        <li
+          className={`${css.listLi} ${activeItem === 4 ? css.activeItem : ""}`}
+          onClick={() => handleItemClick(4)}
+        >
+          {t("description.part1.cabinet.ref")}
+        </li>
       </ul>
     </section>
   );
